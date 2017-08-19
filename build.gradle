@@ -1,0 +1,50 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.1.RELEASE'
+        postgresqlVersion = '9.4-1202-jdbc4'
+        liquibasePluginVersion = '1.2.1'
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath "org.liquibase:liquibase-gradle-plugin:$liquibasePluginVersion"
+        classpath "org.postgresql:postgresql:$postgresqlVersion"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+        classpath "com.moowork.gradle:gradle-node-plugin:1.1.1"
+    }
+}
+
+group 'testSpringBootGradle'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    springBootVersion = '1.5.1.RELEASE'
+    jacksonVersion = '2.8.3'
+}
+
+dependencies {
+
+    compile "org.springframework.boot:spring-boot-starter-web"
+    runtime "org.springframework.boot:spring-boot-starter-tomcat:$springBootVersion"
+
+    compile "com.fasterxml.jackson.core:jackson-core:$jacksonVersion"
+    compile "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonVersion"
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
