@@ -1,8 +1,5 @@
 package data.dto;
 
-/**
- * Created by Vladimir on 19.08.2017.
- */
 public class TestDTO {
 
 	private Long id;

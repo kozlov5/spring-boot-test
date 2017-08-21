@@ -26,7 +26,7 @@ version '1.0-SNAPSHOT'
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
 
-sourceCompatibility = 1.5
+sourceCompatibility = 8
 
 repositories {
     mavenCentral()
