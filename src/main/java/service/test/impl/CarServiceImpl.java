@@ -77,4 +77,8 @@ public class CarServiceImpl implements CarService {
         return cars.stream().filter(f -> f.getId() == id).collect(Collectors.toList()).size() > 0;
     }
 
+    @Override
+    public List<Car> getCarsByOwnerId(int id) {
+        return cars.stream().filter(f -> f.getOwnerId() == id).collect(Collectors.toList());
+    }
 }
