@@ -4,6 +4,7 @@ import entity.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import service.test.CarService;
+import service.test.OwnerService;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -14,6 +15,9 @@ import java.util.stream.Collectors;
 public class CarServiceImpl implements CarService {
 
     private List<Car> cars = new ArrayList<>();
+
+    @Autowired
+    private OwnerService ownerService;
 
     public void setCars(List<Car> cars) {
         this.cars = cars;
@@ -26,7 +30,10 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<Car> create(Car car) {
-        cars.add(car);
+        if (ownerService.checkId(car.getOwnerId())){
+            car.setId(cars.size() + 1);
+            cars.add(car);
+        }
         return cars;
     }
 
