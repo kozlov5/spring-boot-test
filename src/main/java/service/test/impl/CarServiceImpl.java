@@ -67,7 +67,8 @@ public class CarServiceImpl implements CarService {
     public List<Car> edit(int id, Car car) {
         if (checkId(id)) {
             Car result = cars.stream().filter(f -> f.getId() == id).findFirst().orElse(null);
-            result = car;
+            result.setModel(car.getModel());
+            result.setName(car.getName());
         }
         return cars;
     }
@@ -80,5 +81,10 @@ public class CarServiceImpl implements CarService {
     @Override
     public List<Car> getCarsByOwnerId(int id) {
         return cars.stream().filter(f -> f.getOwnerId() == id).collect(Collectors.toList());
+    }
+
+    @Override
+    public Car getById(int id) {
+        return cars.stream().filter(f -> f.getId() == id).findFirst().orElse(null);
     }
 }

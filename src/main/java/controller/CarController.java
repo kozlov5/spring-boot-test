@@ -20,6 +20,11 @@ public class CarController {
         return carService.getCars();
     }
 
+    @RequestMapping(value = "getCar/{id}", method = RequestMethod.GET)
+    public Car getCarById(@PathVariable int id) {
+        return carService.getById(id);
+    }
+
     @RequestMapping(value = "create", method = RequestMethod.POST)
     public List<Car> create(@RequestBody Car car) {
         carService.create(car);

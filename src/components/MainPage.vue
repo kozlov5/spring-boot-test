@@ -10,12 +10,13 @@
             <div v-for="owner in owners" class="owner">
                 <p>{{owner.name}}</p>
                 <button class="delete-button" @click="deleteOwner(owner.id)">&#10006;</button>
-                <button class="edit-button" @click="editOwner(owner)">&#9999;</button>
+                <router-link class="edit-button" :to="{path: '/edit/' + owner.id}">&#9999;</router-link>
                 <button class="add-car-button" @click="addCar(owner.id, owner.name)">+</button>
                 <template v-if="owner.cars.length > 0">
                     <div class="cars-list">
                         <div class="cars-label">Cars:</div>
                         <div v-for="car in owner.cars" class="car">
+                            <router-link class="edit-car-button" :to="{path: '/edit/' + car.id + '/car'}">&#9999;</router-link>
                             <button class="delete-car-button" @click="deleteCar(car.id)">X</button>
                             {{car.name + " " + car.model}}
 
@@ -170,8 +171,10 @@
     }
 
     .edit-button {
-        right: 25px;
+        right: 33px;
+        text-decoration: none;
         top: 4px;
+        color: black;
     }
 
     .add-car-button {
@@ -201,5 +204,12 @@
 
     .search>input {
         width: 100%;
+    }
+
+    .edit-car-button {
+        text-decoration: none;
+        color: black;
+        border: 1px solid;
+        padding: 2px 3px;
     }
 </style>

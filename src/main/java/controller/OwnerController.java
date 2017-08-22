@@ -23,6 +23,9 @@ public class OwnerController {
         return ownerService.getOwners();
     }
 
+    @RequestMapping(value="getOwner/{id}", method = RequestMethod.GET)
+    public Owner getById(@PathVariable int id) { return ownerService.getById(id);}
+
     @RequestMapping(value = "create", method = RequestMethod.POST)
     public List<Owner> create(@RequestBody Owner owner) {
         return ownerService.create(owner);
