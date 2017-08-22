@@ -33,7 +33,7 @@ public class OwnerController {
         return ownerService.delete(id);
     }
 
-    @RequestMapping(value = "edit/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "edit/{id}", method = RequestMethod.POST)
     public List<Owner> edit(@RequestBody Owner owner, @PathVariable int id) {
         return ownerService.edit(id, owner);
     }

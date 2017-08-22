@@ -1,5 +1,6 @@
 package service.test.impl;
 
+import data.dto.OwnerDTO;
 import entity.Car;
 import entity.Owner;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,11 @@ public class OwnerServiceImpl implements OwnerService {
     @Override
     public List<Owner> getOwners() {
         return owners;
+    }
+
+    @Override
+    public Owner getById(int id) {
+        return owners.stream().filter(f -> f.getId() == id).findFirst().orElse(null);
     }
 
     @Override
@@ -59,7 +65,7 @@ public class OwnerServiceImpl implements OwnerService {
                         || f.getLastName().toLowerCase().contains(finalKeyword)
                         || (f.getFirstName() + " " + f.getLastName()).toLowerCase().contains(finalKeyword)
                 ).collect(Collectors.toList());
-        if (searchResult.size() > 0) {
+        if (searchResult.size() > 0 || sort != null) {
             if (sort.equals("down")) {
                 searchResult.sort((a, b) -> (b.getFirstName() + " " + b.getLastName()).compareTo(a.getFirstName() + " " + a.getLastName()));
             } else if (sort.equals("up")) {
@@ -82,5 +88,18 @@ public class OwnerServiceImpl implements OwnerService {
     @Override
     public boolean checkId(int id) {
         return owners.stream().filter(f -> f.getId() == id).collect(Collectors.toList()).size() > 0;
+    }
+
+    @Override
+    public List<OwnerDTO> getDTO(List<Owner> owners) {
+        List<OwnerDTO> ownersDTO = new ArrayList<>();
+        owners.forEach(owner -> {
+            OwnerDTO ownerDTO = new OwnerDTO();
+            ownerDTO.setId(owner.getId());
+            ownerDTO.setName(owner.getFirstName() + " " + owner.getLastName());
+            ownerDTO.setCars(carService.getCarsByOwnerId(owner.getId()));
+            ownersDTO.add(ownerDTO);
+        });
+        return ownersDTO;
     }
 }
