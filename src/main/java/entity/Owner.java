@@ -19,6 +19,14 @@ public class Owner {
     @OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE}, orphanRemoval = true, mappedBy = "owner")
     private List<Car> cars = new ArrayList<>();
 
+    public List<Car> getCars() {
+        return cars;
+    }
+
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
+    }
+
     public Owner() {
 
     }

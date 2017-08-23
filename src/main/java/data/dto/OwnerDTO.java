@@ -8,7 +8,7 @@ import java.util.List;
 public class OwnerDTO {
     private long id;
     private String name;
-    private List<Car> Cars;
+    private List<CarDTO> cars;
 
     public OwnerDTO() {}
 
@@ -17,10 +17,10 @@ public class OwnerDTO {
         this.name = name;
     }
 
-    public OwnerDTO(long id, String name, List<Car> cars) {
+    public OwnerDTO(long id, String name, List<CarDTO> cars) {
         this.id = id;
         this.name = name;
-        Cars = cars;
+        cars = cars;
     }
 
     public long getId() {
@@ -39,11 +39,11 @@ public class OwnerDTO {
         this.name = name;
     }
 
-    public List<Car> getCars() {
-        return Cars;
+    public List<CarDTO> getCars() {
+        return cars;
     }
 
-    public void setCars(List<Car> cars) {
-        Cars = cars;
+    public void setCars(List<CarDTO> cars) {
+        cars = cars;
     }
 }

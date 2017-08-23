@@ -1,11 +1,13 @@
 package controller;
 
+import dao.OwnerDAO;
 import entity.Owner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import service.test.CarService;
 import service.test.OwnerService;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -16,29 +18,36 @@ public class OwnerController {
     private OwnerService ownerService;
 
     @Autowired
-    private CarService carService;
+    private OwnerDAO ownerDAO;
 
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
     public List<Owner> getAll() {
-        return ownerService.getOwners();
+        return ownerDAO.findAll();
     }
 
     @RequestMapping(value="getOwner/{id}", method = RequestMethod.GET)
-    public Owner getById(@PathVariable long id) { return ownerService.getById(id);}
+    public Owner getById(@PathVariable long id) {
+        return ownerDAO.getOne(id);
+    }
 
     @RequestMapping(value = "create", method = RequestMethod.POST)
-    public List<Owner> create(@RequestBody Owner owner) {
-        return ownerService.create(owner);
+    public Owner create(@RequestBody Owner owner) {
+        return ownerDAO.save(owner);
     }
 
     @RequestMapping(value = "delete/{id}", method = RequestMethod.DELETE)
-    public List<Owner> delete(@PathVariable long id) {
-        return ownerService.delete(id);
+    public String delete(@PathVariable long id) {
+        try {
+            ownerDAO.delete(id);
+            return "OK";
+        } catch (Throwable ex) {
+            return ex.toString();
+        }
     }
 
     @RequestMapping(value = "edit/{id}", method = RequestMethod.POST)
-    public List<Owner> edit(@RequestBody Owner owner, @PathVariable long id) {
-        return ownerService.edit(id, owner);
+    public Owner edit(@RequestBody Owner owner, @PathVariable long id) {
+        return ownerDAO.save(owner);
     }
 
     @RequestMapping(value = "search", method = RequestMethod.GET)

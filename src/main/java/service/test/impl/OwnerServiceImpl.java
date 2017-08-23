@@ -1,5 +1,6 @@
 package service.test.impl;
 
+import dao.OwnerDAO;
 import data.dto.OwnerDTO;
 import entity.Car;
 import entity.Owner;
@@ -16,6 +17,9 @@ import java.util.stream.Collectors;
 @Service
 public class OwnerServiceImpl implements OwnerService {
 
+    @Autowired
+    private OwnerDAO ownerDAO;
+
     private List<Owner> owners = new ArrayList<>();
 
     public void setOwners(List<Owner> owners) {
@@ -24,37 +28,6 @@ public class OwnerServiceImpl implements OwnerService {
 
     @Autowired
     private CarService carService;
-
-    @Override
-    public List<Owner> getOwners() {
-        return owners;
-    }
-
-    @Override
-    public Owner getById(long id) {
-        return owners.stream().filter(f -> f.getId() == id).findFirst().orElse(null);
-    }
-
-    @Override
-    public List<Owner> create(Owner owner) {
-        owner.setId(owners.size() + 1);
-        owners.add(owner);
-        return owners;
-    }
-
-    @Override
-    public List<Owner> delete(long id) {
-        if (checkId(id)) {
-            owners = owners.stream().filter(f -> f.getId() != id).collect(Collectors.toList());
-            List<Car> cars = carService.getCars();
-//            cars.forEach(car -> {
-//                if (car.getOwnerId() == id) {
-//                    carService.delete(car.getId());
-//                }
-//            });
-        }
-        return owners;
-    }
 
     @Override
     public List<Owner> search(String keyword, String sort) {
@@ -73,21 +46,6 @@ public class OwnerServiceImpl implements OwnerService {
             }
         }
         return searchResult;
-    }
-
-    @Override
-    public List<Owner> edit(long id, Owner owner) {
-        if (checkId(id)) {
-            Owner result = owners.stream().filter(f -> f.getId() == id).findFirst().orElse(null);
-            result.setFirstName(owner.getFirstName());
-            result.setLastName(owner.getLastName());
-        }
-        return owners;
-    }
-
-    @Override
-    public boolean checkId(long id) {
-        return owners.stream().filter(f -> f.getId() == id).collect(Collectors.toList()).size() > 0;
     }
 
     @Override

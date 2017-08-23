@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/testSpringBootGradle.iml" filepath="$PROJECT_DIR$/testSpringBootGradle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testSpringBootGradle.iml" filepath="$PROJECT_DIR$/.idea/modules/testSpringBootGradle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testSpringBootGradle_main.iml" filepath="$PROJECT_DIR$/.idea/modules/testSpringBootGradle_main.iml" group="testSpringBootGradle" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testSpringBootGradle_test.iml" filepath="$PROJECT_DIR$/.idea/modules/testSpringBootGradle_test.iml" group="testSpringBootGradle" />
     </modules>
   </component>
 </project>

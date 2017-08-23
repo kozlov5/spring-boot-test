@@ -1,7 +1,7 @@
 buildscript {
     ext {
         springBootVersion = '1.5.1.RELEASE'
-        postgresqlVersion = '9.4-1202-jdbc4'
+        postgresqlVersion = '42.1.4'
         liquibasePluginVersion = '1.2.1'
     }
     repositories {
@@ -37,7 +37,7 @@ ext {
     springBootVersion = '1.5.1.RELEASE'
     jacksonVersion = '2.8.3'
     liquibaseVersion = '3.4.2'
-    postgresqlVersion = '9.4-1202-jdbc4'
+    postgresqlVersion = '42.1.4'
 }
 
 dependencies {
