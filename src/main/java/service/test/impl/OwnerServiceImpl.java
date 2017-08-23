@@ -31,7 +31,7 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
-    public Owner getById(int id) {
+    public Owner getById(long id) {
         return owners.stream().filter(f -> f.getId() == id).findFirst().orElse(null);
     }
 
@@ -43,7 +43,7 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
-    public List<Owner> delete(int id) {
+    public List<Owner> delete(long id) {
         if (checkId(id)) {
             owners = owners.stream().filter(f -> f.getId() != id).collect(Collectors.toList());
             List<Car> cars = carService.getCars();
@@ -76,7 +76,7 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
-    public List<Owner> edit(int id, Owner owner) {
+    public List<Owner> edit(long id, Owner owner) {
         if (checkId(id)) {
             Owner result = owners.stream().filter(f -> f.getId() == id).findFirst().orElse(null);
             result.setFirstName(owner.getFirstName());
@@ -86,7 +86,7 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
-    public boolean checkId(int id) {
+    public boolean checkId(long id) {
         return owners.stream().filter(f -> f.getId() == id).collect(Collectors.toList()).size() > 0;
     }
 

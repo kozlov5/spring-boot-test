@@ -24,7 +24,7 @@ public class OwnerController {
     }
 
     @RequestMapping(value="getOwner/{id}", method = RequestMethod.GET)
-    public Owner getById(@PathVariable int id) { return ownerService.getById(id);}
+    public Owner getById(@PathVariable long id) { return ownerService.getById(id);}
 
     @RequestMapping(value = "create", method = RequestMethod.POST)
     public List<Owner> create(@RequestBody Owner owner) {
@@ -32,12 +32,12 @@ public class OwnerController {
     }
 
     @RequestMapping(value = "delete/{id}", method = RequestMethod.DELETE)
-    public List<Owner> delete(@PathVariable int id) {
+    public List<Owner> delete(@PathVariable long id) {
         return ownerService.delete(id);
     }
 
     @RequestMapping(value = "edit/{id}", method = RequestMethod.POST)
-    public List<Owner> edit(@RequestBody Owner owner, @PathVariable int id) {
+    public List<Owner> edit(@RequestBody Owner owner, @PathVariable long id) {
         return ownerService.edit(id, owner);
     }
 

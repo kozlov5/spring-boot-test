@@ -38,7 +38,7 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public List<Car> delete(int id) {
+    public List<Car> delete(long id) {
         if (checkId(id)) {
             cars = cars.stream().filter(f -> f.getId() != id).collect(Collectors.toList());
         }
@@ -64,7 +64,7 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public List<Car> edit(int id, Car car) {
+    public List<Car> edit(long id, Car car) {
         if (checkId(id)) {
             Car result = cars.stream().filter(f -> f.getId() == id).findFirst().orElse(null);
             result.setModel(car.getModel());
@@ -74,17 +74,17 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public boolean checkId(int id) {
+    public boolean checkId(long id) {
         return cars.stream().filter(f -> f.getId() == id).collect(Collectors.toList()).size() > 0;
     }
 
     @Override
-    public List<Car> getCarsByOwnerId(int id) {
+    public List<Car> getCarsByOwnerId(long id) {
         return cars.stream().filter(f -> f.getOwnerId() == id).collect(Collectors.toList());
     }
 
     @Override
-    public Car getById(int id) {
+    public Car getById(long id) {
         return cars.stream().filter(f -> f.getId() == id).findFirst().orElse(null);
     }
 }

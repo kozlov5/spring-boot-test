@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface CarService {
     List<Car> getCars();
-    List<Car> getCarsByOwnerId(int id);
-    Car getById(int id);
+    List<Car> getCarsByOwnerId(long id);
+    Car getById(long id);
     List<Car> create(Car car);
-    List<Car> delete(int id);
+    List<Car> delete(long id);
     List<Car> search(String keyword, String sort);
-    List<Car> edit(int id, Car car);
-    boolean checkId(int id);
+    List<Car> edit(long id, Car car);
+    boolean checkId(long id);
 }

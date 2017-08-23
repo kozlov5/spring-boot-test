@@ -21,7 +21,7 @@ public class CarController {
     }
 
     @RequestMapping(value = "getCar/{id}", method = RequestMethod.GET)
-    public Car getCarById(@PathVariable int id) {
+    public Car getCarById(@PathVariable long id) {
         return carService.getById(id);
     }
 
@@ -32,12 +32,12 @@ public class CarController {
     }
 
     @RequestMapping(value = "delete/{id}", method = RequestMethod.DELETE)
-    public List<Car> delete(@PathVariable int id) {
+    public List<Car> delete(@PathVariable long id) {
         return carService.delete(id);
     }
 
     @RequestMapping(value = "edit/{id}", method = RequestMethod.PUT)
-    public List<Car> edit(@RequestBody Car car, @PathVariable int id) {
+    public List<Car> edit(@RequestBody Car car, @PathVariable long id) {
         return carService.edit(id, car);
     }
 
