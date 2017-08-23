@@ -6,9 +6,7 @@ import org.springframework.stereotype.Service;
 import service.test.CarService;
 import service.test.OwnerService;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -30,10 +28,10 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<Car> create(Car car) {
-        if (ownerService.checkId(car.getOwnerId())){
-            car.setId(cars.size() + 1);
-            cars.add(car);
-        }
+//        if (ownerService.checkId(car.getOwnerId())){
+//            car.setId(cars.size() + 1);
+//            cars.add(car);
+//        }
         return cars;
     }
 
@@ -80,7 +78,8 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<Car> getCarsByOwnerId(long id) {
-        return cars.stream().filter(f -> f.getOwnerId() == id).collect(Collectors.toList());
+// TODO реализовать получение из бд       return cars.stream().filter(f -> f.getOwnerId() == id).collect(Collectors.toList());
+        return new ArrayList<Car>();
     }
 
     @Override

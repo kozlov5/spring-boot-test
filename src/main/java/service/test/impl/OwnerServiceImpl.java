@@ -47,11 +47,11 @@ public class OwnerServiceImpl implements OwnerService {
         if (checkId(id)) {
             owners = owners.stream().filter(f -> f.getId() != id).collect(Collectors.toList());
             List<Car> cars = carService.getCars();
-            cars.forEach(car -> {
-                if (car.getOwnerId() == id) {
-                    carService.delete(car.getId());
-                }
-            });
+//            cars.forEach(car -> {
+//                if (car.getOwnerId() == id) {
+//                    carService.delete(car.getId());
+//                }
+//            });
         }
         return owners;
     }

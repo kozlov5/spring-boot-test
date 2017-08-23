@@ -1,10 +1,23 @@
 package entity;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
 public class Owner {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(insertable = false, updatable = false)
     private long id;
+
     private String firstName;
+
     private String lastName;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE}, orphanRemoval = true, mappedBy = "owner")
+    private List<Car> cars = new ArrayList<>();
 
     public Owner() {
 

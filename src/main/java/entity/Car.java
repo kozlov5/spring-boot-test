@@ -1,21 +1,40 @@
 package entity;
 
+import javax.persistence.*;
+
+/**
+ * Сущность автомобиль
+ */
+@Entity
 public class Car {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(insertable = false, updatable = false)
 	private long id;
-	private long ownerId;
+
+	/**
+	 * Название автомобиля
+	 */
 	private String name;
+
+	/**
+	 * Модель автомобиля
+	 */
 	private String model;
+
+	@ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+	@JoinColumn(name = "owner_id")
+	private Owner owner;
 
 	public Car() {
 
 	}
 
-	public Car(long id, String name, String model, long ownerId) {
+	public Car(long id, String name, String model) {
 		this.id = id;
 		this.name = name;
 		this.model = model;
-		this.ownerId = ownerId;
 	}
 
 	public long getId() {
@@ -26,12 +45,12 @@ public class Car {
 		this.id = id;
 	}
 
-	public long getOwnerId() {
-		return ownerId;
+	public Owner getOwner() {
+		return owner;
 	}
 
-	public void setOwnerId(long ownerId) {
-		this.ownerId = ownerId;
+	public void setOwner(Owner owner) {
+		this.owner = owner;
 	}
 
 	public String getName() {
@@ -49,5 +68,7 @@ public class Car {
 	public void setModel(String model) {
 		this.model = model;
 	}
+
+
 
 }

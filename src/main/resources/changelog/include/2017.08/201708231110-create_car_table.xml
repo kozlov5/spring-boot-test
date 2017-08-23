@@ -12,8 +12,8 @@
             <column autoIncrement="true" name="id" type="bigint">
                 <constraints primaryKey="true" primaryKeyName="pk_owner_id"/>
             </column>
-            <column name="firstName" type="VARCHAR(255)" remarks="Имя владельца"/>
-            <column name="lastName" type="VARCHAR(255)" remarks="Фамилия владельца"/>
+            <column name="first_name" type="VARCHAR(255)" remarks="Имя владельца"/>
+            <column name="last_name" type="VARCHAR(255)" remarks="Фамилия владельца"/>
         </createTable>
 
         <createTable tableName="car" remarks="Таблица Автомобиль">

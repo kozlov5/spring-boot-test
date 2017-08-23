@@ -35,7 +35,7 @@ public class MainController {
         LinkedHashSet<Owner> finalOwners = new LinkedHashSet<>(ownerService.search(keyword, sort));
 
         List<Car> cars = carService.search(keyword, sort);
-        cars.forEach(car -> finalOwners.add(ownerService.getById(car.getOwnerId())));
+//        cars.forEach(car -> finalOwners.add(ownerService.getById(car.getOwnerId())));
 
         return ownerService.getDTO(new ArrayList<>(finalOwners));
     }

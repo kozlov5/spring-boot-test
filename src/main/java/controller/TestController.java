@@ -1,6 +1,7 @@
 package controller;
 
 import data.dto.TestDTO;
+import entity.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
@@ -18,12 +19,8 @@ public class TestController {
 
 	@RequestMapping(value = "test", method = RequestMethod.GET)
 	public TestDTO testRequest() {
-		TestDTO testDTO = new TestDTO();
-		testDTO.setId(1L);
-		testDTO.setName(testService.testServiceMethod());
 
-		String b = testService.testServiceMethod();
-		String a = "weg";
-		return testDTO;
+		Car car = testService.findById(2L);
+		return new TestDTO();
 	}
 }

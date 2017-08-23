@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CarService {
     List<Car> getCars();
-    List<Car> getCarsByOwnerId(long id);
+    List getCarsByOwnerId(long id);
     Car getById(long id);
     List<Car> create(Car car);
     List<Car> delete(long id);
