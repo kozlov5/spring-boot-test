@@ -1,52 +1,53 @@
 package entity;
 
 public class Car {
-    private int id;
-    private int ownerId;
-    private String name;
-    private String model;
 
-    public Car() {
+	private long id;
+	private long ownerId;
+	private String name;
+	private String model;
 
-    }
+	public Car() {
 
-    public Car(int id, String name, String model, int ownerId) {
-        this.id = id;
-        this.name = name;
-        this.model = model;
-        this.ownerId = ownerId;
-    }
+	}
 
-    public int getId() {
-        return id;
-    }
+	public Car(long id, String name, String model, int ownerId) {
+		this.id = id;
+		this.name = name;
+		this.model = model;
+		this.ownerId = ownerId;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public long getId() {
+		return id;
+	}
 
-    public int getOwnerId() {
-        return ownerId;
-    }
+	public void setId(long id) {
+		this.id = id;
+	}
 
-    public void setOwnerId(int ownerId) {
-        this.ownerId = ownerId;
-    }
+	public long getOwnerId() {
+		return ownerId;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setOwnerId(long ownerId) {
+		this.ownerId = ownerId;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String getModel() {
-        return model;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public void setModel(String model) {
-        this.model = model;
-    }
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
 
 }

@@ -2,7 +2,7 @@ package entity;
 
 public class Owner {
 
-    private int id;
+    private long id;
     private String firstName;
     private String lastName;
 
@@ -10,17 +10,17 @@ public class Owner {
 
     }
 
-    public Owner(int id, String firstName, String lastName) {
+    public Owner(long id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
