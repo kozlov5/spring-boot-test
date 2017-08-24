@@ -9,4 +9,12 @@ yarn-error.log
 *.suo
 *.ntvs*
 *.njsproj
-*.sln
+*.iml
+*.ipr
+*.iws
+*.cache
+.gradle
+gradle
+build
+logs
+out
