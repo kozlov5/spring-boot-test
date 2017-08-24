@@ -40,9 +40,4 @@ public class CarController {
     public Car edit(@RequestBody Car car, @PathVariable long id) {
         return carService.edit(car);
     }
-
-    @RequestMapping(value = "search", method = RequestMethod.GET)
-    public List<Car> search(@RequestParam String keyword, @RequestParam(required = false, name = "sort") String sort) {
-        return carService.search(keyword, sort);
-    }
 }
