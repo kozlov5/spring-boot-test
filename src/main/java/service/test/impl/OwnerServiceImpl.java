@@ -20,15 +20,6 @@ public class OwnerServiceImpl implements OwnerService {
     @Autowired
     private OwnerDAO ownerDAO;
 
-    private List<Owner> owners = new ArrayList<>();
-
-    public void setOwners(List<Owner> owners) {
-        this.owners = owners;
-    }
-
-    @Autowired
-    private CarService carService;
-
     @Override
     public List<Owner> getOwners() {
         return ownerDAO.findAll();
