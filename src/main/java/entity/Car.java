@@ -23,7 +23,7 @@ public class Car {
      */
     private String model;
 
-    @ManyToOne(cascade = {CascadeType.ALL, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
     private Owner owner;
 
 
