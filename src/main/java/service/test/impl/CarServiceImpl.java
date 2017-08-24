@@ -1,5 +1,7 @@
 package service.test.impl;
 
+import dao.CarDAO;
+import data.dto.CarDTO;
 import entity.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,78 +14,37 @@ import java.util.stream.Collectors;
 @Service
 public class CarServiceImpl implements CarService {
 
-    private List<Car> cars = new ArrayList<>();
-
     @Autowired
-    private OwnerService ownerService;
+    private CarDAO carDAO;
 
-    public void setCars(List<Car> cars) {
-        this.cars = cars;
+    @Override
+    public List<CarDTO> getCars() {
+        List<Car> cars = carDAO.findAll();
+        return cars.stream().map(CarDTO::new).collect(Collectors.toList());
     }
 
     @Override
-    public List<Car> getCars() {
-        return cars;
+    public Car create(Car car) {
+        return carDAO.save(car);
     }
 
     @Override
-    public List<Car> create(Car car) {
-//        if (ownerService.checkId(car.getOwnerId())){
-//            car.setId(cars.size() + 1);
-//            cars.add(car);
-//        }
-        return cars;
-    }
-
-    @Override
-    public List<Car> delete(long id) {
-        if (checkId(id)) {
-            cars = cars.stream().filter(f -> f.getId() != id).collect(Collectors.toList());
+    public String delete(long id) {
+        try {
+            carDAO.delete(id);
+            return "OK";
+        } catch (Throwable ex) {
+            return ex.toString();
         }
-        return cars;
     }
 
     @Override
-    public List<Car> search(String keyword, String sort) {
-        String finalKeyword = keyword.toLowerCase();
-        List<Car> searchResult = cars.stream().filter(f ->
-                f.getName().toLowerCase().contains(finalKeyword)
-                || f.getModel().toLowerCase().contains(finalKeyword)
-                || (f.getName().toLowerCase() + " " + f.getModel().toLowerCase()).contains(finalKeyword)
-        ).collect(Collectors.toList());
-        if (sort.equals("down")) {
-            searchResult.sort((a, b) -> (b.getName() + " " + b.getModel()).compareTo(a.getName() + " " + a.getModel()));
-
-        } else if(sort.equals("up")) {
-            searchResult.sort(Comparator.comparing(a -> (a.getName() + " " + a.getModel())));
-
-        }
-        return searchResult;
-    }
-
-    @Override
-    public List<Car> edit(long id, Car car) {
-        if (checkId(id)) {
-            Car result = cars.stream().filter(f -> f.getId() == id).findFirst().orElse(null);
-            result.setModel(car.getModel());
-            result.setName(car.getName());
-        }
-        return cars;
-    }
-
-    @Override
-    public boolean checkId(long id) {
-        return cars.stream().filter(f -> f.getId() == id).collect(Collectors.toList()).size() > 0;
-    }
-
-    @Override
-    public List<Car> getCarsByOwnerId(long id) {
-// TODO реализовать получение из бд       return cars.stream().filter(f -> f.getOwnerId() == id).collect(Collectors.toList());
-        return new ArrayList<Car>();
+    public Car edit(Car car) {
+        return carDAO.save(car);
     }
 
     @Override
     public Car getById(long id) {
-        return cars.stream().filter(f -> f.getId() == id).findFirst().orElse(null);
+        return carDAO.getOne(id);
     }
 }

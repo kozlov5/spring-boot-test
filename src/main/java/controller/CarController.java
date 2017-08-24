@@ -1,5 +1,6 @@
 package controller;
 
+import data.dto.CarDTO;
 import entity.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,33 +17,28 @@ public class CarController {
     private CarService carService;
 
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
-    public List<Car> getAll() {
+    public List<CarDTO> getAll() {
         return carService.getCars();
     }
 
-    @RequestMapping(value = "getCar/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "get/{id}", method = RequestMethod.GET)
     public Car getCarById(@PathVariable long id) {
         return carService.getById(id);
     }
 
     @RequestMapping(value = "create", method = RequestMethod.POST)
-    public List<Car> create(@RequestBody Car car) {
+    public List<CarDTO> create(@RequestBody Car car) {
         carService.create(car);
         return carService.getCars();
     }
 
     @RequestMapping(value = "delete/{id}", method = RequestMethod.DELETE)
-    public List<Car> delete(@PathVariable long id) {
+    public String delete(@PathVariable long id) {
         return carService.delete(id);
     }
 
     @RequestMapping(value = "edit/{id}", method = RequestMethod.PUT)
-    public List<Car> edit(@RequestBody Car car, @PathVariable long id) {
-        return carService.edit(id, car);
-    }
-
-    @RequestMapping(value = "search", method = RequestMethod.GET)
-    public List<Car> search(@RequestParam String keyword, @RequestParam(required = false, name = "sort") String sort) {
-        return carService.search(keyword, sort);
+    public Car edit(@RequestBody Car car, @PathVariable long id) {
+        return carService.edit(car);
     }
 }

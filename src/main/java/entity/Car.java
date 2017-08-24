@@ -8,67 +8,66 @@ import javax.persistence.*;
 @Entity
 public class Car {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(insertable = false, updatable = false)
-	private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(insertable = false, updatable = false)
+    private long id;
 
-	/**
-	 * Название автомобиля
-	 */
-	private String name;
+    /**
+     * Название автомобиля
+     */
+    private String name;
 
-	/**
-	 * Модель автомобиля
-	 */
-	private String model;
+    /**
+     * Модель автомобиля
+     */
+    private String model;
 
-	@ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
-	@JoinColumn(name = "owner_id")
-	private Owner owner;
+    @ManyToOne(cascade = {CascadeType.ALL, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    private Owner owner;
 
-	public Car() {
 
-	}
+    public Car() {
 
-	public Car(long id, String name, String model) {
-		this.id = id;
-		this.name = name;
-		this.model = model;
-	}
+    }
 
-	public long getId() {
-		return id;
-	}
+    public Car(long id, String name, String model) {
+        this.id = id;
+        this.name = name;
+        this.model = model;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public Owner getOwner() {
-		return owner;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setOwner(Owner owner) {
-		this.owner = owner;
-	}
+    public Owner getOwner() {
+        return owner;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getModel() {
-		return model;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setModel(String model) {
-		this.model = model;
-	}
+    public String getModel() {
+        return model;
+    }
 
+    public void setModel(String model) {
+        this.model = model;
+    }
 
 
 }

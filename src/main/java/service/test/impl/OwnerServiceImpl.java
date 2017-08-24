@@ -1,6 +1,7 @@
 package service.test.impl;
 
 import dao.OwnerDAO;
+import data.dto.CarDTO;
 import data.dto.OwnerDTO;
 import entity.Car;
 import entity.Owner;
@@ -20,24 +21,40 @@ public class OwnerServiceImpl implements OwnerService {
     @Autowired
     private OwnerDAO ownerDAO;
 
-    private List<Owner> owners = new ArrayList<>();
-
-    public void setOwners(List<Owner> owners) {
-        this.owners = owners;
+    @Override
+    public List<OwnerDTO> getOwners() {
+        List<Owner> owners = ownerDAO.findAll();
+        List<OwnerDTO> ownersDTO = owners.stream().map(owner -> {
+          List<CarDTO> carsDTO = owner.getCars().stream().map(CarDTO::new).collect(Collectors.toList());
+            return new OwnerDTO(owner, carsDTO);
+        }).collect(Collectors.toList());
+        return ownersDTO;
     }
 
-    @Autowired
-    private CarService carService;
+    @Override
+    public Owner getById(long id) {
+        return ownerDAO.getOne(id);
+    }
+
+    @Override
+    public Owner create(Owner owner) {
+        return ownerDAO.save(owner);
+    }
+
+    @Override
+    public String delete(long id) {
+        try {
+            ownerDAO.delete(id);
+            return "OK";
+        } catch (Throwable ex) {
+            return ex.toString();
+        }
+    }
 
     @Override
     public List<Owner> search(String keyword, String sort) {
         String finalKeyword = keyword.toLowerCase();
-        List<Owner> searchResult =
-                owners.stream().filter(f ->
-                        f.getFirstName().toLowerCase().contains(finalKeyword)
-                        || f.getLastName().toLowerCase().contains(finalKeyword)
-                        || (f.getFirstName() + " " + f.getLastName()).toLowerCase().contains(finalKeyword)
-                ).collect(Collectors.toList());
+        List<Owner> searchResult = ownerDAO.findByNameAndCars(finalKeyword);
         if (searchResult.size() > 0 || sort != null) {
             if (sort.equals("down")) {
                 searchResult.sort((a, b) -> (b.getFirstName() + " " + b.getLastName()).compareTo(a.getFirstName() + " " + a.getLastName()));
@@ -49,15 +66,7 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
-    public List<OwnerDTO> getDTO(List<Owner> owners) {
-        List<OwnerDTO> ownersDTO = new ArrayList<>();
-        owners.forEach(owner -> {
-            OwnerDTO ownerDTO = new OwnerDTO();
-            ownerDTO.setId(owner.getId());
-            ownerDTO.setName(owner.getFirstName() + " " + owner.getLastName());
-            ownerDTO.setCars(carService.getCarsByOwnerId(owner.getId()));
-            ownersDTO.add(ownerDTO);
-        });
-        return ownersDTO;
+    public Owner edit(Owner owner) {
+        return ownerDAO.save(owner);
     }
 }
