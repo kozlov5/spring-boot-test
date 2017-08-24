@@ -20,7 +20,7 @@
         },
         methods: {
             createOwner() {
-                this.$http.post('http://localhost:8090/owner/create', {
+                this.$http.post('owner/create', {
                     firstName: this.firstName,
                     lastName: this.lastName,
                 }).then(result => {

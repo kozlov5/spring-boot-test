@@ -21,7 +21,7 @@
         },
         methods: {
           saveOwner() {
-              this.$http.post('http://localhost:8090/owner/edit/' + this.id, {
+              this.$http.post('owner/edit/' + this.id, {
                   firstName: this.firstName,
                   lastName: this.lastName,
                   id: this.id,
@@ -33,7 +33,7 @@
           }
         },
         created() {
-            this.$http.get('http://localhost:8090/owner/get/' + this.$route.params.id).then(result => {
+            this.$http.get('owner/get/' + this.$route.params.id).then(result => {
                 this.firstName = result.body.firstName;
                 this.lastName = result.body.lastName;
                 this.name = result.body.firstName + ' ' + result.body.lastName;

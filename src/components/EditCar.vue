@@ -21,7 +21,7 @@
             }
         },
         created() {
-          this.$http.get('http://localhost:8090/car/get/' + this.$route.params.id).then(result => {
+          this.$http.get('car/get/' + this.$route.params.id).then(result => {
               this.model = result.body.model;
               this.name = result.body.name;
               this.id = result.body.id;
@@ -33,7 +33,7 @@
         },
         methods: {
             saveCar() {
-                this.$http.put('http://localhost:8090/car/edit/' + this.id, {
+                this.$http.put('car/edit/' + this.id, {
                     model: this.model,
                     name: this.name,
                     id: this.id,

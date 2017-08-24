@@ -21,7 +21,7 @@
         methods: {
             createCar() {
                 console.log(this);
-                this.$http.post('http://localhost:8090/car/create', {
+                this.$http.post('car/create', {
                     model: this.model,
                     name: this.name,
                     owner:{ id: this.owner}

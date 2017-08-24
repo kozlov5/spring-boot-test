@@ -4,6 +4,8 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
+Vue.http.options.root = 'http://localhost:8090';
+
 
 import MainPage from './components/MainPage.vue'
 import Edit from './components/Edit.vue'
@@ -26,5 +28,8 @@ const router = new VueRouter({
 });
 
 const app = new Vue({
-    router
+    router,
+    http: {
+        root: 'http://localhost:8090'
+    }
 }).$mount('#app');

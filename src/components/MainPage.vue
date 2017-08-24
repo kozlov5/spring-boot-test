@@ -75,7 +75,7 @@
             },
 
             searchOwners() {
-                this.$http.get('http://localhost:8090/search', {params: {keyword: this.search, sort: 'down'}}).then(result => {
+                this.$http.get('search', {params: {keyword: this.search, sort: 'down'}}).then(result => {
                     this.owners = result.body;
                     this.searchMode = true;
                 }, error => {
@@ -88,7 +88,7 @@
             },
 
             getOwners() {
-                this.$http.get('http://localhost:8090/owners').then(result => {
+                this.$http.get('owners').then(result => {
                     this.owners = result.body;
                     this.search = '';
                     this.searchMode = false;
@@ -104,7 +104,7 @@
             },
 
             deleteOwner(id) {
-                this.$http.delete('http://localhost:8090/owner/delete/' + id).then(result => {
+                this.$http.delete('owner/delete/' + id).then(result => {
                     this.getOwners();
                 }, error => {
                     console.log('DELETE error::', error)
@@ -112,7 +112,7 @@
             },
 
             deleteCar(id) {
-                this.$http.delete('http://localhost:8090/car/delete/' + id).then(result => {
+                this.$http.delete('car/delete/' + id).then(result => {
                     this.getOwners();
                 }, error => {
                     console.log('DELETE error::', error)
