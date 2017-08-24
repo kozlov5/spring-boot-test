@@ -23,9 +23,6 @@ import java.util.List;
 public class MainController {
 
     @Autowired
-    private CarService carService;
-
-    @Autowired
     private OwnerService ownerService;
 
     @Autowired
@@ -39,12 +36,8 @@ public class MainController {
     }
 
     @RequestMapping(value = "search", method = RequestMethod.GET)
-    public List<OwnerDTO> search(@RequestParam String keyword, @RequestParam(required = false) String sort) {
-        LinkedHashSet<Owner> finalOwners = new LinkedHashSet<>(ownerService.search(keyword, sort));
+    public List<Owner> search(@RequestParam String keyword, @RequestParam(required = false) String sort) {
 
-        List<Car> cars = carService.search(keyword, sort);
-//        cars.forEach(car -> finalOwners.add(ownerService.getById(car.getOwnerId())));
-
-        return ownerService.getDTO(new ArrayList<>(finalOwners));
+        return ownerService.search(keyword, sort);
     }
 }

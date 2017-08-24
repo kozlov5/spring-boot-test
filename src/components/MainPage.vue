@@ -69,9 +69,11 @@
                 };
                 this.setCarMode(false);
             },
+
             editOwner(owner) {
               this.selectedOwner = owner;
             },
+
             searchOwners() {
                 this.$http.get('http://localhost:8090/search', {params: {keyword: this.search, sort: 'down'}}).then(result => {
                     this.owners = result.body;
@@ -80,9 +82,11 @@
                     console.log('GET error::', error)
                 })
             },
+
             setCarMode(status) {
               this.addCarMode = status;
             },
+
             getOwners() {
                 this.$http.get('http://localhost:8090/owners').then(result => {
                     this.owners = result.body;
@@ -101,19 +105,12 @@
 
             deleteOwner(id) {
                 this.$http.delete('http://localhost:8090/owner/delete/' + id).then(result => {
-                    let index = -1;
-                    this.owners.forEach((item, i) => {
-                        if (item.id === id) {
-                            index = i;
-                        }
-                    });
-                    if (index !== -1) {
-                        this.owners.splice(index, 1);
-                    }
+                    this.getOwners();
                 }, error => {
                     console.log('DELETE error::', error)
                 })
             },
+
             deleteCar(id) {
                 this.$http.delete('http://localhost:8090/car/delete/' + id).then(result => {
                     this.getOwners();

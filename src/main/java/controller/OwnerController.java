@@ -17,37 +17,29 @@ public class OwnerController {
     @Autowired
     private OwnerService ownerService;
 
-    @Autowired
-    private OwnerDAO ownerDAO;
-
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
     public List<Owner> getAll() {
-        return ownerDAO.findAll();
+        return ownerService.getOwners();
     }
 
-    @RequestMapping(value="getOwner/{id}", method = RequestMethod.GET)
+    @RequestMapping(value="get/{id}", method = RequestMethod.GET)
     public Owner getById(@PathVariable long id) {
-        return ownerDAO.getOne(id);
+        return ownerService.getById(id);
     }
 
     @RequestMapping(value = "create", method = RequestMethod.POST)
     public Owner create(@RequestBody Owner owner) {
-        return ownerDAO.save(owner);
+        return ownerService.create(owner);
     }
 
     @RequestMapping(value = "delete/{id}", method = RequestMethod.DELETE)
     public String delete(@PathVariable long id) {
-        try {
-            ownerDAO.delete(id);
-            return "OK";
-        } catch (Throwable ex) {
-            return ex.toString();
-        }
+        return ownerService.delete(id);
     }
 
     @RequestMapping(value = "edit/{id}", method = RequestMethod.POST)
     public Owner edit(@RequestBody Owner owner, @PathVariable long id) {
-        return ownerDAO.save(owner);
+        return ownerService.edit(owner);
     }
 
     @RequestMapping(value = "search", method = RequestMethod.GET)
