@@ -24,7 +24,7 @@
                 this.$http.post('http://localhost:8090/car/create', {
                     model: this.model,
                     name: this.name,
-                    ownerId: this.owner
+                    owner:{ id: this.owner}
                 }).then(result => {
                     console.log(result);
                     this.model = '';

@@ -1,6 +1,7 @@
 package service.test.impl;
 
 import dao.OwnerDAO;
+import data.dto.CarDTO;
 import data.dto.OwnerDTO;
 import entity.Car;
 import entity.Owner;
@@ -21,8 +22,13 @@ public class OwnerServiceImpl implements OwnerService {
     private OwnerDAO ownerDAO;
 
     @Override
-    public List<Owner> getOwners() {
-        return ownerDAO.findAll();
+    public List<OwnerDTO> getOwners() {
+        List<Owner> owners = ownerDAO.findAll();
+        List<OwnerDTO> ownersDTO = owners.stream().map(owner -> {
+          List<CarDTO> carsDTO = owner.getCars().stream().map(CarDTO::new).collect(Collectors.toList());
+            return new OwnerDTO(owner, carsDTO);
+        }).collect(Collectors.toList());
+        return ownersDTO;
     }
 
     @Override

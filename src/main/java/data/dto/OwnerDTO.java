@@ -2,6 +2,7 @@ package data.dto;
 
 
 import entity.Car;
+import entity.Owner;
 
 import java.util.List;
 
@@ -11,6 +12,12 @@ public class OwnerDTO {
     private List<CarDTO> cars;
 
     public OwnerDTO() {}
+
+    public OwnerDTO(Owner owner, List<CarDTO> cars) {
+        this.id = owner.getId();
+        this.cars = cars;
+        this.name = owner.getFirstName() + ' ' + owner.getLastName();
+    }
 
     public OwnerDTO(long id, String name) {
         this.id = id;

@@ -21,7 +21,7 @@
             }
         },
         created() {
-          this.$http.get('http://localhost:8090/car/getCar/' + this.$route.params.id).then(result => {
+          this.$http.get('http://localhost:8090/car/get/' + this.$route.params.id).then(result => {
               this.model = result.body.model;
               this.name = result.body.name;
               this.id = result.body.id;

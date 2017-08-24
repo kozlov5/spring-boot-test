@@ -1,6 +1,7 @@
 package service.test.impl;
 
 import dao.CarDAO;
+import data.dto.CarDTO;
 import entity.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +18,9 @@ public class CarServiceImpl implements CarService {
     private CarDAO carDAO;
 
     @Override
-    public List<Car> getCars() {
-        return carDAO.findAll();
+    public List<CarDTO> getCars() {
+        List<Car> cars = carDAO.findAll();
+        return cars.stream().map(CarDTO::new).collect(Collectors.toList());
     }
 
     @Override

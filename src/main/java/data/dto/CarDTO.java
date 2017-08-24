@@ -1,5 +1,7 @@
 package data.dto;
 
+import entity.Car;
+
 /**
  * Created by Alexander on 23.08.2017.
  */
@@ -11,6 +13,13 @@ public class CarDTO {
 
     public CarDTO() {
 
+    }
+
+    public CarDTO(Car car) {
+        this.id = car.getId();
+        this.name = car.getName();
+        this.model = car.getModel();
+        this.ownerId = car.getOwner().getId();
     }
 
     public CarDTO(long id, long ownerId, String name, String model) {

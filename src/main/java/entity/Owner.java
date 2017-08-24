@@ -13,7 +13,6 @@ public class Owner {
     private long id;
 
     private String firstName;
-
     private String lastName;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE}, orphanRemoval = true, mappedBy = "owner")
