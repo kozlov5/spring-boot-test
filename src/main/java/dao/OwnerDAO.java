@@ -17,8 +17,8 @@ public interface OwnerDAO extends JpaRepository<Owner, Long> {
      */
     @Query(nativeQuery = true, value = "SELECT * " +
             "FROM owner o LEFT JOIN car c ON o.id = c.owner_id WHERE " +
-            "CONCAT(c.name, ' ', c.model) LIKE CONCAT('%', :keyword, '%') OR " +
-            "CONCAT(o.first_name, ' ', o.last_name) LIKE CONCAT('%', :keyword, '%')")
+            "LOWER(CONCAT(c.name, ' ', c.model)) LIKE LOWER(CONCAT('%', :keyword, '%')) OR " +
+            "LOWER(CONCAT(o.first_name, ' ', o.last_name)) LIKE LOWER(CONCAT('%', :keyword, '%'))")
     List<Owner> findByNameAndCars(@Param("keyword") String keyword);
 
 }

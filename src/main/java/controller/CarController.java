@@ -22,7 +22,7 @@ public class CarController {
     }
 
     @RequestMapping(value = "get/{id}", method = RequestMethod.GET)
-    public Car getCarById(@PathVariable long id) {
+    public CarDTO getCarById(@PathVariable long id) {
         return carService.getById(id);
     }
 

@@ -23,7 +23,8 @@ public class Car {
      */
     private String model;
 
-    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = { CascadeType.REFRESH}, fetch = FetchType.LAZY)
+    @JoinColumn(name = "owner_id", updatable = false)
     private Owner owner;
 
 

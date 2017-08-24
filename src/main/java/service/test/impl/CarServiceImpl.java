@@ -44,7 +44,8 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public Car getById(long id) {
-        return carDAO.getOne(id);
+    public CarDTO getById(long id) {
+        Car car = carDAO.getOne(id);
+        return new CarDTO(car);
     }
 }

@@ -30,7 +30,7 @@ public class MainController {
     }
 
     @RequestMapping(value = "search", method = RequestMethod.GET)
-    public List<Owner> search(@RequestParam String keyword, @RequestParam(required = false) String sort) {
+    public List<OwnerDTO> search(@RequestParam String keyword, @RequestParam(required = false) String sort) {
 
         return ownerService.search(keyword, sort);
     }

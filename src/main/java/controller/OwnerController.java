@@ -24,7 +24,7 @@ public class OwnerController {
     }
 
     @RequestMapping(value="get/{id}", method = RequestMethod.GET)
-    public Owner getById(@PathVariable long id) {
+    public OwnerDTO getById(@PathVariable long id) {
         return ownerService.getById(id);
     }
 
@@ -41,10 +41,5 @@ public class OwnerController {
     @RequestMapping(value = "edit/{id}", method = RequestMethod.POST)
     public Owner edit(@RequestBody Owner owner, @PathVariable long id) {
         return ownerService.edit(owner);
-    }
-
-    @RequestMapping(value = "search", method = RequestMethod.GET)
-    public List<Owner> search(@RequestParam String keyword, @RequestParam(required = false, name = "sort") String sort) {
-        return ownerService.search(keyword, sort);
     }
 }

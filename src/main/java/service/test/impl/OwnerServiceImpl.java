@@ -32,8 +32,9 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
-    public Owner getById(long id) {
-        return ownerDAO.getOne(id);
+    public OwnerDTO getById(long id) {
+        Owner owner = ownerDAO.getOne(id);
+        return new OwnerDTO(owner);
     }
 
     @Override
@@ -52,7 +53,7 @@ public class OwnerServiceImpl implements OwnerService {
     }
 
     @Override
-    public List<Owner> search(String keyword, String sort) {
+    public List<OwnerDTO> search(String keyword, String sort) {
         String finalKeyword = keyword.toLowerCase();
         List<Owner> searchResult = ownerDAO.findByNameAndCars(finalKeyword);
         if (searchResult.size() > 0 || sort != null) {
@@ -62,7 +63,11 @@ public class OwnerServiceImpl implements OwnerService {
                 searchResult.sort(Comparator.comparing(a -> (a.getFirstName() + " " + a.getLastName())));
             }
         }
-        return searchResult;
+        List<OwnerDTO> ownersDTO = searchResult.stream().map(owner -> {
+            List<CarDTO> carsDTO = owner.getCars().stream().map(CarDTO::new).collect(Collectors.toList());
+            return new OwnerDTO(owner, carsDTO);
+        }).collect(Collectors.toList());
+        return ownersDTO;
     }
 
     @Override

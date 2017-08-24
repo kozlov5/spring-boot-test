@@ -33,7 +33,7 @@
           }
         },
         created() {
-            this.$http.get('http://localhost:8090/owner/getOwner/' + this.$route.params.id).then(result => {
+            this.$http.get('http://localhost:8090/owner/get/' + this.$route.params.id).then(result => {
                 this.firstName = result.body.firstName;
                 this.lastName = result.body.lastName;
                 this.name = result.body.firstName + ' ' + result.body.lastName;

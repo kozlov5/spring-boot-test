@@ -37,7 +37,7 @@
                     model: this.model,
                     name: this.name,
                     id: this.id,
-                    ownerId: this.ownerId
+                    owner: {id: this.ownerId}
                 }).then(result => {
                     this.$router.push('/');
                 }, err => {

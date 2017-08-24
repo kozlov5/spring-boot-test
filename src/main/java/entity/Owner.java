@@ -15,7 +15,7 @@ public class Owner {
     private String firstName;
     private String lastName;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.REFRESH}, orphanRemoval = true, mappedBy = "owner")
+    @OneToMany(fetch = FetchType.EAGER, cascade = { CascadeType.REFRESH}, orphanRemoval = true, mappedBy = "owner")
     private List<Car> cars = new ArrayList<>();
 
     public List<Car> getCars() {

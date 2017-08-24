@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface OwnerService {
     List<OwnerDTO> getOwners();
-    Owner getById(long id);
+    OwnerDTO getById(long id);
     Owner create(Owner owner);
     String delete(long id);
     Owner edit(Owner owner);
-    List<Owner> search(String keyword, String sort);
+    List<OwnerDTO> search(String keyword, String sort);
 }
