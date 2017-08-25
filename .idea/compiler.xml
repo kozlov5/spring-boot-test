@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <resourceExtensions />
-    <annotationProcessing>
-      <profile default="true" name="Default" enabled="false">
-        <processorPath useClasspath="true" />
-      </profile>
-    </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="spring-boot-test_main" target="1.8" />
+      <module name="spring-boot-test_test" target="1.8" />
       <module name="testSpringBootGradle_main" target="1.8" />
       <module name="testSpringBootGradle_test" target="1.8" />
     </bytecodeTargetLevel>

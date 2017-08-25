@@ -33,6 +33,8 @@ public class MainView extends MVerticalLayout implements View {
 	private OwnerService ownerService;
 	@Autowired
 	private CarView carView;
+	@Autowired
+	private OwnerView ownerView;
 
 //	private final MButton addCar = new MButton("Добавить");
 
@@ -54,10 +56,6 @@ public class MainView extends MVerticalLayout implements View {
 		initCarGrid();
 		initOwnerGrid();
 
-//		addCar.addClickListener(event -> {
-//			carView.build(new Car());
-//			getUI().getNavigator().navigateTo(CarView.VIEW_NAME);
-//		});
 
 		final MHorizontalLayout gridLayout = new MHorizontalLayout().withFullHeight().withFullWidth();
 		gridLayout.add(carGrid, ownerGrid);
@@ -95,6 +93,13 @@ public class MainView extends MVerticalLayout implements View {
 				.setHeaderCaption("Имя");
 		ownerGrid.getColumn("lastName")
 				.setHeaderCaption("Фамилия");
+
+		ownerGrid.addItemClickListener(event -> {
+			if (event.isDoubleClick()) {
+				ownerView.build((Owner) event.getItemId());
+				getUI().getNavigator().navigateTo(OwnerView.VIEW_NAME);
+			}
+		});
 	}
 
 	private void refresh() {
