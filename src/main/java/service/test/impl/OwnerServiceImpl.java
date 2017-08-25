@@ -25,11 +25,10 @@ public class OwnerServiceImpl implements OwnerService {
     @Override
     public List<OwnerDTO> getOwners() {
         List<Owner> owners = ownerDAO.findAll();
-        List<OwnerDTO> ownersDTO = owners.stream().map(owner -> {
+        return owners.stream().map(owner -> {
           List<CarDTO> carsDTO = owner.getCars().stream().map(CarDTO::new).collect(Collectors.toList());
             return new OwnerDTO(owner, carsDTO);
         }).collect(Collectors.toList());
-        return ownersDTO;
     }
 
     @Override
@@ -56,7 +55,7 @@ public class OwnerServiceImpl implements OwnerService {
     @Override
     public List<OwnerDTO> search(String keyword, String sort) {
         String finalKeyword = keyword.toLowerCase();
-        List<Owner> searchResult = ownerDAO.findByNameAndCars(finalKeyword);
+        List<Owner> searchResult = ownerDAO.findByNameAndCars("%" + finalKeyword + "%");
 //        LinkedHashSet<Owner> result = new LinkedHashSet<>(ownerDAO.findByNameAndCars(finalKeyword));
 //        List<Owner> searchResult = new ArrayList<>(result);
         if (searchResult.size() > 0 || sort != null) {

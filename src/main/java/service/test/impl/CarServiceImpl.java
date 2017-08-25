@@ -5,6 +5,7 @@ import data.dto.CarDTO;
 import entity.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import service.test.CarService;
 import service.test.OwnerService;
 
@@ -24,11 +25,14 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
+    @Transactional
     public Car create(Car car) {
+        delete(car.getId());
         return carDAO.save(car);
     }
 
     @Override
+    @Transactional
     public String delete(long id) {
         try {
             carDAO.delete(id);
