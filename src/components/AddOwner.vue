@@ -3,7 +3,7 @@
         <label for="firstName">First name:</label>
         <input id="firstName" type="text" v-model="firstName">
         <label for="lastName">Last name:</label>
-        <input id="lastName" type="text" v-model="lastName">
+        <input id="lastName" @keyup.enter="createOwner" type="text" v-model="lastName">
         <button @click="createOwner">
             Create
         </button>

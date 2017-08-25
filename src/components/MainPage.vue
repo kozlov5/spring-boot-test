@@ -2,8 +2,9 @@
     <div id="app">
         <h1>List of owners <button @click="addOwner">+</button></h1>
         <div class="search">
-            <input type="text" placeholder="Search" v-model="search">
+            <input type="text" @keyup.enter="searchOwners" placeholder="Search" v-model="search">
             <button @click="searchOwners">Search</button>
+            <button v-if="searchMode" @click="searchSorting">{{sort}}</button>
             <button v-if="searchMode" @click="getOwners">All</button>
         </div>
         <div class="owners-list">
@@ -40,6 +41,7 @@
     import AddCar from "./AddCar.vue";
     export default {
         components: {AddOwner, AddCar},
+        sort: 'down',
         name: 'mainPage',
         data() {
             return {
@@ -56,11 +58,22 @@
                 search: '',
                 searchMode: false,
                 car: 0,
-                editMode: false
-
+                editMode: false,
+                sort: 'down'
             }
         },
         methods: {
+            searchSorting() {
+                if (this.search.length === 0) {
+                    return;
+                }
+                if (this.sort === 'down') {
+                    this.sort = 'up';
+                } else {
+                    this.sort = 'down';
+                }
+                this.searchOwners();
+            },
             addOwner() {
                 this.selectedOwner = {
                     firstName: '',
@@ -75,7 +88,10 @@
             },
 
             searchOwners() {
-                this.$http.get('search', {params: {keyword: this.search, sort: 'down'}}).then(result => {
+                if (this.search.length === 0) {
+                    return;
+                }
+                this.$http.get('search', {params: {keyword: this.search, sort: this.sort}}).then(result => {
                     this.owners = result.body;
                     this.searchMode = true;
                 }, error => {

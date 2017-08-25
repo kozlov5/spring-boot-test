@@ -12,6 +12,7 @@ import service.test.OwnerService;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -56,6 +57,8 @@ public class OwnerServiceImpl implements OwnerService {
     public List<OwnerDTO> search(String keyword, String sort) {
         String finalKeyword = keyword.toLowerCase();
         List<Owner> searchResult = ownerDAO.findByNameAndCars(finalKeyword);
+//        LinkedHashSet<Owner> result = new LinkedHashSet<>(ownerDAO.findByNameAndCars(finalKeyword));
+//        List<Owner> searchResult = new ArrayList<>(result);
         if (searchResult.size() > 0 || sort != null) {
             if (sort.equals("down")) {
                 searchResult.sort((a, b) -> (b.getFirstName() + " " + b.getLastName()).compareTo(a.getFirstName() + " " + a.getLastName()));

@@ -5,7 +5,7 @@
         <label for="firstName">First name:</label>
         <input id="firstName" type="text" v-model="firstName">
         <label for="lastName">Last name:</label>
-        <input id="lastName" type="text" v-model="lastName">
+        <input id="lastName" @keyup.enter="saveOwner" type="text" v-model="lastName">
         <button @click="saveOwner">Save</button>
     </div>
 </template>

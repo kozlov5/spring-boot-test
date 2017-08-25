@@ -4,7 +4,7 @@
         <label for="name">Name:</label>
         <input id="name" type="text" v-model="name">
         <label for="model">Model:</label>
-        <input id="model" type="text" v-model="model">
+        <input id="model" @keyup.enter="createCar" type="text" v-model="model">
         <button @click="createCar">Create</button>
     </div>
 </template>

@@ -6,20 +6,30 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/controller/OwnerController.java" description="public Owner create(@RequestBody Owner owner) {" line="31" />
     <bookmark url="file://$PROJECT_DIR$/src/main/java/controller/OwnerController.java" description="public String delete(@PathVariable long id) {" line="36" />
     <bookmark url="file://$PROJECT_DIR$/src/main/java/controller/OwnerController.java" description="@RequestMapping(value = &quot;edit/{id}&quot;, method = Requ..." line="40" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/service/test/impl/OwnerServiceImpl.java" description="public Owner edit(Owner owner) {" line="73" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/service/test/impl/OwnerServiceImpl.java" description="public List&lt;Owner&gt; delete(long id) {" line="45" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/service/test/impl/OwnerServiceImpl.java" description="public Owner create(Owner owner) {" line="40" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/service/test/impl/OwnerServiceImpl.java" description="public Owner getById(long id) {" line="34" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/service/test/impl/OwnerServiceImpl.java" description="public List&lt;Owner&gt; getOwners() {" line="24" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/service/test/impl/OwnerServiceImpl.java" description="public Owner edit(Owner owner) {" line="76" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/service/test/impl/OwnerServiceImpl.java" description="public List&lt;Owner&gt; delete(long id) {" line="46" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/service/test/impl/OwnerServiceImpl.java" description="public Owner create(Owner owner) {" line="41" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/service/test/impl/OwnerServiceImpl.java" description="public Owner getById(long id) {" line="35" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/service/test/impl/OwnerServiceImpl.java" description="public List&lt;Owner&gt; getOwners() {" line="25" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6049c998-98aa-4eea-8c8a-9c31e07bfacc" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.5/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.5/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.5/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.5/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.5/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.5/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.5/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.5/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/dao/OwnerDAO.class" afterPath="$PROJECT_DIR$/build/classes/main/dao/OwnerDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/data/dto/OwnerDTO.class" afterPath="$PROJECT_DIR$/build/classes/main/data/dto/OwnerDTO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/service/test/impl/OwnerServiceImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/service/test/impl/OwnerServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/AddCar.vue" afterPath="$PROJECT_DIR$/src/components/AddCar.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/AddOwner.vue" afterPath="$PROJECT_DIR$/src/components/AddOwner.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Edit.vue" afterPath="$PROJECT_DIR$/src/components/Edit.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/EditCar.vue" afterPath="$PROJECT_DIR$/src/components/EditCar.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/MainPage.vue" afterPath="$PROJECT_DIR$/src/components/MainPage.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.js" afterPath="$PROJECT_DIR$/src/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/OwnerDAO.java" afterPath="$PROJECT_DIR$/src/main/java/dao/OwnerDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/data/dto/OwnerDTO.java" afterPath="$PROJECT_DIR$/src/main/java/data/dto/OwnerDTO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/test/impl/OwnerServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/service/test/impl/OwnerServiceImpl.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -270,19 +280,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Car.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/entity/Car.java">
+      <file leaf-file-name="OwnerServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/service/test/impl/OwnerServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-              <folding>
-                <element signature="docComment;class#Car#0" expanded="false" />
-                <element signature="e#109#112#0" expanded="false" />
-                <element signature="docComment;field#name#0;class#Car#0" expanded="false" />
-                <element signature="docComment;field#model#0;class#Car#0" expanded="false" />
-                <element signature="method#Car#0;class#Car#0" expanded="false" />
-                <element signature="method#Car#1;class#Car#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="281">
+              <caret line="59" column="102" lean-forward="false" selection-start-line="59" selection-start-column="102" selection-end-line="59" selection-end-column="102" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -290,52 +293,66 @@
       <file leaf-file-name="MainPage.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/MainPage.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="114" column="35" lean-forward="false" selection-start-line="114" selection-start-column="35" selection-end-line="114" selection-end-column="35" />
+            <state relative-caret-position="85">
+              <caret line="5" column="57" lean-forward="false" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
               <folding>
-                <element signature="n#template#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="e#546#554#1" expanded="false" />
-                <element signature="e#647#654#1" expanded="false" />
-                <element signature="n#template#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#template#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#template#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="e#1099#1106#1" expanded="false" />
-                <element signature="n#template#0;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="n#template#1;n#div#0;n#template#0;n#!!top" expanded="false" />
-                <element signature="e#1928#2411#0" expanded="false" />
-                <element signature="e#1949#2401#0" expanded="false" />
-                <element signature="e#2121#2235#0" expanded="false" />
-                <element signature="e#2455#2663#0" expanded="false" />
-                <element signature="e#2494#2608#0" expanded="false" />
-                <element signature="e#2695#2752#0" expanded="false" />
-                <element signature="e#2782#3097#0" expanded="false" />
-                <element signature="e#2888#2998#0" expanded="false" />
-                <element signature="e#3009#3082#0" expanded="false" />
-                <element signature="e#3131#3186#0" expanded="false" />
-                <element signature="e#3271#3420#0" expanded="false" />
-                <element signature="e#3431#3504#0" expanded="false" />
-                <element signature="e#3551#3671#0" expanded="false" />
-                <element signature="e#3843#3919#0" expanded="false" />
-                <element signature="e#4034#4091#0" expanded="false" />
-                <element signature="e#4102#4178#0" expanded="false" />
+                <element signature="e#2250#2364#0" expanded="false" />
+                <element signature="e#2954#3162#0" expanded="false" />
+                <element signature="e#2993#3107#0" expanded="false" />
+                <element signature="e#3194#3251#0" expanded="false" />
+                <element signature="e#3484#3594#0" expanded="false" />
+                <element signature="e#3605#3678#0" expanded="false" />
+                <element signature="e#3727#3782#0" expanded="false" />
+                <element signature="e#3867#4016#0" expanded="false" />
+                <element signature="e#4027#4100#0" expanded="false" />
+                <element signature="e#4147#4267#0" expanded="false" />
+                <element signature="e#4439#4515#0" expanded="false" />
+                <element signature="e#4630#4687#0" expanded="false" />
+                <element signature="e#4698#4774#0" expanded="false" />
                 <element signature="n#style#0;n#!!top" expanded="false" />
-                <element signature="e#4390#4468#0" expanded="false" />
-                <element signature="e#4481#4590#0" expanded="false" />
-                <element signature="e#4607#4658#0" expanded="false" />
-                <element signature="e#4683#4713#0" expanded="false" />
-                <element signature="e#4731#4790#0" expanded="false" />
-                <element signature="e#4825#5023#0" expanded="false" />
-                <element signature="e#5042#5141#0" expanded="false" />
-                <element signature="e#5163#5364#0" expanded="false" />
-                <element signature="e#5389#5521#0" expanded="false" />
-                <element signature="e#5535#5611#0" expanded="false" />
-                <element signature="e#5631#5659#0" expanded="false" />
-                <element signature="e#5682#5795#0" expanded="false" />
+                <element signature="e#4986#5064#0" expanded="false" />
+                <element signature="e#5077#5186#0" expanded="false" />
+                <element signature="e#5203#5254#0" expanded="false" />
+                <element signature="e#5279#5309#0" expanded="false" />
+                <element signature="e#5327#5386#0" expanded="false" />
+                <element signature="e#5421#5619#0" expanded="false" />
+                <element signature="e#5638#5737#0" expanded="false" />
+                <element signature="e#5759#5960#0" expanded="false" />
+                <element signature="e#5985#6117#0" expanded="false" />
+                <element signature="e#6131#6207#0" expanded="false" />
+                <element signature="e#6227#6255#0" expanded="false" />
+                <element signature="e#6278#6391#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddOwner.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/AddOwner.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="37" lean-forward="false" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Edit.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Edit.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="52" lean-forward="false" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditCar.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/EditCar.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="47" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -343,50 +360,34 @@
       <file leaf-file-name="AddCar.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/AddCar.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+            <state relative-caret-position="68">
+              <caret line="4" column="52" lean-forward="false" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main.js">
+      <file leaf-file-name="OwnerDAO.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dao/OwnerDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+            <state relative-caret-position="85">
+              <caret line="5" column="55" lean-forward="true" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
               <folding>
-                <element signature="e#192#240#0" expanded="true" />
+                <marker date="1503648646918" expanded="true" signature="479:556" ph="SELECT *\nFR... owner" />
+                <marker date="1503648646918" expanded="true" signature="479:752" ph="SELECT *\nFR... owner" />
+                <marker date="1503648646918" expanded="true" signature="479:758" ph="SELECT * FRO... owner" />
+                <marker date="1503648646918" expanded="true" signature="479:759" ph="SELECT * FRO... owner" />
+                <marker date="1503648646918" expanded="true" signature="479:773" ph="SELECT o.* F... owner" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CascadeType.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate.javax.persistence/hibernate-jpa-2.1-api/1.0.0.Final/33fbaa7276b774ef0925f541640f6ff23fbc62dc/hibernate-jpa-2.1-api-1.0.0.Final-sources.jar!/javax/persistence/CascadeType.java">
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c0bcd13d-9d51-4835-879d-b7dc60ceed46/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OwnerDTO.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/data/dto/OwnerDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="23" column="41" lean-forward="true" selection-start-line="22" selection-start-column="58" selection-end-line="23" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Owner.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/entity/Owner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+            <state relative-caret-position="68">
+              <caret line="4" column="76" lean-forward="false" selection-start-line="4" selection-start-column="76" selection-end-line="4" selection-end-column="89" />
               <folding />
             </state>
           </provider>
@@ -1107,29 +1108,29 @@
         <option value="$PROJECT_DIR$/src/components/MainPage.scss" />
         <option value="$PROJECT_DIR$/src/components/AddCar.html" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/components/AddOwner.vue" />
-        <option value="$PROJECT_DIR$/src/components/Edit.vue" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/data.application.properties" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c0bcd13d-9d51-4835-879d-b7dc60ceed46/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/dao/CarDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/data/dto/CarDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/OwnerDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/test/impl/OwnerServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/test/OwnerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/OwnerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/test/impl/CarServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/test/CarService.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/CarController.java" />
-        <option value="$PROJECT_DIR$/src/components/EditCar.vue" />
         <option value="$PROJECT_DIR$/src/main/java/entity/Car.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/Owner.java" />
         <option value="$PROJECT_DIR$/src/main.js" />
-        <option value="$PROJECT_DIR$/src/components/MainPage.vue" />
-        <option value="$PROJECT_DIR$/src/components/AddCar.vue" />
         <option value="$PROJECT_DIR$/src/main/java/data/dto/OwnerDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/test/impl/OwnerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/components/MainPage.vue" />
+        <option value="$PROJECT_DIR$/src/components/AddOwner.vue" />
+        <option value="$PROJECT_DIR$/src/components/AddCar.vue" />
+        <option value="$PROJECT_DIR$/src/components/Edit.vue" />
+        <option value="$PROJECT_DIR$/src/components/EditCar.vue" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/c0bcd13d-9d51-4835-879d-b7dc60ceed46/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/OwnerDAO.java" />
       </list>
     </option>
   </component>
@@ -1252,7 +1253,7 @@
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
-    <property name="SearchEverywhereHistoryKey" value="ed&#9;FILE&#9;file://C:/Users/Alexander/Documents/spring-boot-test/src/components/EditCar.vue&#10;addca&#9;FILE&#9;file://C:/Users/Alexander/Documents/spring-boot-test/src/components/AddCar.vue&#10;carda&#9;FILE&#9;file://C:/Users/Alexander/Documents/spring-boot-test/src/main/java/dao/CarDAO.java&#10;carse&#9;FILE&#9;file://C:/Users/Alexander/Documents/spring-boot-test/src/main/java/service/test/CarService.java&#10;car&#9;FILE&#9;file://C:/Users/Alexander/Documents/spring-boot-test/src/main/java/dao/CarDAO.java&#10;carc&#9;FILE&#9;file://C:/Users/Alexander/Documents/spring-boot-test/src/main/java/controller/CarController.java&#10;ownerse&#9;FILE&#9;file://C:/Users/Alexander/Documents/spring-boot-test/src/main/java/service/test/impl/OwnerServiceImpl.java" />
+    <property name="SearchEverywhereHistoryKey" value="owners&#9;FILE&#9;file://C:/Users/Alexander/Documents/spring-boot-test/src/main/java/service/test/impl/OwnerServiceImpl.java&#10;ed&#9;FILE&#9;file://C:/Users/Alexander/Documents/spring-boot-test/src/components/EditCar.vue&#10;addca&#9;FILE&#9;file://C:/Users/Alexander/Documents/spring-boot-test/src/components/AddCar.vue&#10;carda&#9;FILE&#9;file://C:/Users/Alexander/Documents/spring-boot-test/src/main/java/dao/CarDAO.java&#10;carse&#9;FILE&#9;file://C:/Users/Alexander/Documents/spring-boot-test/src/main/java/service/test/CarService.java&#10;car&#9;FILE&#9;file://C:/Users/Alexander/Documents/spring-boot-test/src/main/java/dao/CarDAO.java&#10;carc&#9;FILE&#9;file://C:/Users/Alexander/Documents/spring-boot-test/src/main/java/controller/CarController.java&#10;ownerse&#9;FILE&#9;file://C:/Users/Alexander/Documents/spring-boot-test/src/main/java/service/test/impl/OwnerServiceImpl.java" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
   </component>
   <component name="RecentsManager">
@@ -1732,16 +1733,15 @@
       <workItem from="1503386442833" duration="284000" />
       <workItem from="1503386747641" duration="23082000" />
       <workItem from="1503477426614" duration="867000" />
-      <workItem from="1503479299477" duration="45362000" />
+      <workItem from="1503479299477" duration="50694000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122461000" />
+    <option name="totallyTimeSpent" value="127793000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1750,11 +1750,11 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23187633" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23187633" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24946696" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3560606" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3560606" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1762,7 +1762,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30627707" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21055438" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1824,7 +1824,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="25" />
+      <option name="time" value="26" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1906,14 +1906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Edit.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
@@ -1953,14 +1945,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-jpa/1.11.0.RELEASE/2ac4423b606c3a33bd70c4c40bceaf2611ec90e0/spring-data-jpa-1.11.0.RELEASE-sources.jar!/org/springframework/data/jpa/repository/JpaRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="37" column="56" lean-forward="true" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/1.13.0.RELEASE/323bbf6e092205e8e46cfc70a9c9c2df29f0009b/spring-data-commons-1.13.0.RELEASE-sources.jar!/org/springframework/data/repository/query/QueryByExampleExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -1973,22 +1957,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c0bcd13d-9d51-4835-879d-b7dc60ceed46/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="60" lean-forward="true" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AddOwner.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -2117,20 +2085,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/OwnerDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="99" lean-forward="false" selection-start-line="20" selection-start-column="99" selection-end-line="20" selection-end-column="99" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1503581724547" expanded="true" signature="529:604" ph="SELECT *\nFR... owner" />
-            <marker date="1503581724547" expanded="true" signature="529:800" ph="SELECT *\nFR... owner" />
-            <marker date="1503581724547" expanded="true" signature="529:806" ph="SELECT * FRO... owner" />
-            <marker date="1503581724547" expanded="true" signature="529:807" ph="SELECT * FRO... owner" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/service/test/OwnerService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -2165,22 +2119,6 @@
             <element signature="e#495#496#0" expanded="true" />
             <element signature="e#538#539#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/EditCar.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="39" column="44" lean-forward="false" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/test/impl/OwnerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="67" column="48" lean-forward="false" selection-start-line="67" selection-start-column="48" selection-end-line="67" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2225,7 +2163,7 @@
         <state relative-caret-position="68">
           <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
           <folding>
-            <element signature="e#192#240#0" expanded="true" />
+            <element signature="e#192#240#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2245,70 +2183,116 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/data/dto/OwnerDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="22" column="58" lean-forward="true" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/test/impl/OwnerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="59" column="102" lean-forward="false" selection-start-line="59" selection-start-column="102" selection-end-line="59" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-jpa/1.11.0.RELEASE/2ac4423b606c3a33bd70c4c40bceaf2611ec90e0/spring-data-jpa-1.11.0.RELEASE-sources.jar!/org/springframework/data/jpa/repository/JpaRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="41" column="72" lean-forward="true" selection-start-line="41" selection-start-column="72" selection-end-line="41" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/MainPage.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="114" column="35" lean-forward="false" selection-start-line="114" selection-start-column="35" selection-end-line="114" selection-end-column="35" />
+        <state relative-caret-position="85">
+          <caret line="5" column="57" lean-forward="false" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
           <folding>
-            <element signature="n#template#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#546#554#1" expanded="false" />
-            <element signature="e#647#654#1" expanded="false" />
-            <element signature="n#template#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#template#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#template#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#1099#1106#1" expanded="false" />
-            <element signature="n#template#0;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="n#template#1;n#div#0;n#template#0;n#!!top" expanded="false" />
-            <element signature="e#1928#2411#0" expanded="false" />
-            <element signature="e#1949#2401#0" expanded="false" />
-            <element signature="e#2121#2235#0" expanded="false" />
-            <element signature="e#2455#2663#0" expanded="false" />
-            <element signature="e#2494#2608#0" expanded="false" />
-            <element signature="e#2695#2752#0" expanded="false" />
-            <element signature="e#2782#3097#0" expanded="false" />
-            <element signature="e#2888#2998#0" expanded="false" />
-            <element signature="e#3009#3082#0" expanded="false" />
-            <element signature="e#3131#3186#0" expanded="false" />
-            <element signature="e#3271#3420#0" expanded="false" />
-            <element signature="e#3431#3504#0" expanded="false" />
-            <element signature="e#3551#3671#0" expanded="false" />
-            <element signature="e#3843#3919#0" expanded="false" />
-            <element signature="e#4034#4091#0" expanded="false" />
-            <element signature="e#4102#4178#0" expanded="false" />
+            <element signature="e#2250#2364#0" expanded="false" />
+            <element signature="e#2954#3162#0" expanded="false" />
+            <element signature="e#2993#3107#0" expanded="false" />
+            <element signature="e#3194#3251#0" expanded="false" />
+            <element signature="e#3484#3594#0" expanded="false" />
+            <element signature="e#3605#3678#0" expanded="false" />
+            <element signature="e#3727#3782#0" expanded="false" />
+            <element signature="e#3867#4016#0" expanded="false" />
+            <element signature="e#4027#4100#0" expanded="false" />
+            <element signature="e#4147#4267#0" expanded="false" />
+            <element signature="e#4439#4515#0" expanded="false" />
+            <element signature="e#4630#4687#0" expanded="false" />
+            <element signature="e#4698#4774#0" expanded="false" />
             <element signature="n#style#0;n#!!top" expanded="false" />
-            <element signature="e#4390#4468#0" expanded="false" />
-            <element signature="e#4481#4590#0" expanded="false" />
-            <element signature="e#4607#4658#0" expanded="false" />
-            <element signature="e#4683#4713#0" expanded="false" />
-            <element signature="e#4731#4790#0" expanded="false" />
-            <element signature="e#4825#5023#0" expanded="false" />
-            <element signature="e#5042#5141#0" expanded="false" />
-            <element signature="e#5163#5364#0" expanded="false" />
-            <element signature="e#5389#5521#0" expanded="false" />
-            <element signature="e#5535#5611#0" expanded="false" />
-            <element signature="e#5631#5659#0" expanded="false" />
-            <element signature="e#5682#5795#0" expanded="false" />
+            <element signature="e#4986#5064#0" expanded="false" />
+            <element signature="e#5077#5186#0" expanded="false" />
+            <element signature="e#5203#5254#0" expanded="false" />
+            <element signature="e#5279#5309#0" expanded="false" />
+            <element signature="e#5327#5386#0" expanded="false" />
+            <element signature="e#5421#5619#0" expanded="false" />
+            <element signature="e#5638#5737#0" expanded="false" />
+            <element signature="e#5759#5960#0" expanded="false" />
+            <element signature="e#5985#6117#0" expanded="false" />
+            <element signature="e#6131#6207#0" expanded="false" />
+            <element signature="e#6227#6255#0" expanded="false" />
+            <element signature="e#6278#6391#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/AddCar.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="25" column="36" lean-forward="true" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+        <state relative-caret-position="68">
+          <caret line="4" column="52" lean-forward="false" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/data/dto/OwnerDTO.java">
+    <entry file="file://$PROJECT_DIR$/src/components/AddOwner.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="23" column="41" lean-forward="true" selection-start-line="22" selection-start-column="58" selection-end-line="23" selection-end-column="41" />
+        <state relative-caret-position="102">
+          <caret line="6" column="37" lean-forward="false" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Edit.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="52" lean-forward="false" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/EditCar.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="47" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c0bcd13d-9d51-4835-879d-b7dc60ceed46/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="76" lean-forward="false" selection-start-line="4" selection-start-column="76" selection-end-line="4" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/OwnerDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="55" lean-forward="true" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
+          <folding>
+            <marker date="1503648646918" expanded="true" signature="479:556" ph="SELECT *\nFR... owner" />
+            <marker date="1503648646918" expanded="true" signature="479:752" ph="SELECT *\nFR... owner" />
+            <marker date="1503648646918" expanded="true" signature="479:758" ph="SELECT * FRO... owner" />
+            <marker date="1503648646918" expanded="true" signature="479:759" ph="SELECT * FRO... owner" />
+            <marker date="1503648646918" expanded="true" signature="479:773" ph="SELECT o.* F... owner" />
+          </folding>
         </state>
       </provider>
     </entry>

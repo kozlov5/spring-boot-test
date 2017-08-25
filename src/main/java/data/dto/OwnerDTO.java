@@ -13,9 +13,9 @@ public class OwnerDTO {
      * Полное имя. Складывается из имени и фамилии.
      */
     private String name;
-    private List<CarDTO> cars;
     private String firstName;
     private String lastName;
+    private List<CarDTO> cars;
 
     public OwnerDTO() {}
 
@@ -33,7 +33,7 @@ public class OwnerDTO {
     /**
      * Класс для маппинга Owner в OwnerDTO вместе с автомобилями.
      * @param owner - сущность владельца.
-     * @param cars - сущность автомобилей владельца.
+     * @param cars - DTO автомобилей владельца.
      */
     public OwnerDTO(Owner owner, List<CarDTO> cars) {
         this.id = owner.getId();
