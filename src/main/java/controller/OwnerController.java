@@ -1,14 +1,11 @@
 package controller;
 
-import dao.OwnerDAO;
 import data.dto.OwnerDTO;
 import entity.Owner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import service.test.CarService;
 import service.test.OwnerService;
 
-import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -20,7 +17,7 @@ public class OwnerController {
 
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
     public List<OwnerDTO> getAll() {
-        return ownerService.getOwners();
+        return ownerService.getOwnersDTO();
     }
 
     @RequestMapping(value="get/{id}", method = RequestMethod.GET)

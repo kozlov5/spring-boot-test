@@ -5,7 +5,6 @@ import entity.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import service.test.CarService;
-import service.test.OwnerService;
 
 import java.util.List;
 
@@ -18,7 +17,7 @@ public class CarController {
 
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
     public List<CarDTO> getAll() {
-        return carService.getCars();
+        return carService.getCarsDTO();
     }
 
     @RequestMapping(value = "get/{id}", method = RequestMethod.GET)
@@ -29,7 +28,7 @@ public class CarController {
     @RequestMapping(value = "create", method = RequestMethod.POST)
     public List<CarDTO> create(@RequestBody Car car) {
         carService.create(car);
-        return carService.getCars();
+        return carService.getCarsDTO();
     }
 
     @RequestMapping(value = "delete/{id}", method = RequestMethod.DELETE)

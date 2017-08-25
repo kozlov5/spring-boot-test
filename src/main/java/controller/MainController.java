@@ -1,10 +1,7 @@
 package controller;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import dao.OwnerDAO;
 import data.dto.OwnerDTO;
-import entity.Owner;
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,7 +22,7 @@ public class MainController {
 
     @RequestMapping(value = "owners", method = RequestMethod.GET)
     public List<OwnerDTO> getOwners() {
-        List<OwnerDTO> ownersDTO = ownerService.getOwners();
+        List<OwnerDTO> ownersDTO = ownerService.getOwnersDTO();
         return ownersDTO;
     }
 

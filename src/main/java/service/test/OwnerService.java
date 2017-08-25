@@ -6,7 +6,8 @@ import entity.Owner;
 import java.util.List;
 
 public interface OwnerService {
-    List<OwnerDTO> getOwners();
+    List<OwnerDTO> getOwnersDTO();
+    List<Owner> getOwners();
     OwnerDTO getById(long id);
     Owner create(Owner owner);
     String delete(long id);

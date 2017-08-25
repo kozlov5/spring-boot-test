@@ -6,7 +6,8 @@ import entity.Car;
 import java.util.List;
 
 public interface CarService {
-    List<CarDTO> getCars();
+    List<CarDTO> getCarsDTO();
+    List<Car> getCars();
     CarDTO getById(long id);
     Car create(Car car);
     String delete(long id);

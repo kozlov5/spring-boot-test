@@ -20,7 +20,7 @@ public class TestController {
 	@RequestMapping(value = "test", method = RequestMethod.GET)
 	public TestDTO testRequest() {
 
-		Car car = testService.findById(3L);
+		Car car = testService.findById(2L);
 		return new TestDTO();
 	}
 }
