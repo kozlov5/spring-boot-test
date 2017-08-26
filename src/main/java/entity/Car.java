@@ -24,7 +24,7 @@ public class Car {
     private String model;
 
     @ManyToOne(cascade = { CascadeType.REFRESH}, fetch = FetchType.LAZY)
-    @JoinColumn(name = "owner_id", updatable = false)
+    @JoinColumn(name = "owner_id")
     private Owner owner;
 
 

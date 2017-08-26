@@ -76,8 +76,8 @@ public class OwnerView extends MVerticalLayout implements View {
                 fieldGroup.commit();
                 Owner owner = fieldGroup.getItemDataSource().getBean();
                 carGrid.getSelectedRowsWithType().forEach(car -> {
+                    car.setOwner(owner);
                     carService.edit(car);
-                    String abc = "asd";
                 });
                 carGrid.getSelectionModel().reset();
                 ownerService.edit(owner);
