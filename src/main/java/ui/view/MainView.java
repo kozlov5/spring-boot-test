@@ -72,9 +72,7 @@ public class MainView extends MVerticalLayout implements View {
 		carGrid.getColumn("name")
 				.setHeaderCaption("Название");
 		carGrid.getColumn("model")
-				.setHeaderCaption("Модель")
-				.setHidable(true)
-				.setHidden(true);
+				.setHeaderCaption("Модель");
 
 		carGrid.addItemClickListener(event -> {
 			if (event.isDoubleClick()) {

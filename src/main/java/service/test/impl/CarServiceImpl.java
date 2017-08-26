@@ -3,11 +3,14 @@ package service.test.impl;
 import dao.CarDAO;
 import data.dto.CarDTO;
 import entity.Car;
+import org.hibernate.Hibernate;
+import org.hibernate.proxy.HibernateProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import service.test.CarService;
 import service.test.OwnerService;
 
+import javax.transaction.Transactional;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -28,11 +31,13 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
+    @Transactional
     public Car create(Car car) {
         return carDAO.save(car);
     }
 
     @Override
+    @Transactional
     public String delete(long id) {
         try {
             carDAO.delete(id);
@@ -43,7 +48,9 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
+    @Transactional
     public Car edit(Car car) {
+//        Hibernate.initialize(car.getOwner());
         return carDAO.save(car);
     }
 
@@ -51,5 +58,15 @@ public class CarServiceImpl implements CarService {
     public CarDTO getById(long id) {
         Car car = carDAO.getOne(id);
         return new CarDTO(car);
+    }
+
+    @Override
+    public List<Car> getByOwnerId(long id) {
+        return carDAO.findByOwnerId(id);
+    }
+
+    @Override
+    public List<Car> getNoOwnerCars(long id) {
+        return carDAO.findNotOwnerCars(id);
     }
 }

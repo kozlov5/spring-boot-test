@@ -12,10 +12,18 @@ import java.util.List;
 public interface CarDAO extends JpaRepository<Car, Long> {
 
 	/**
-	 * Поиск автомобилей по ID владельца
-	 * @param id - ID владельца в БД
+	 * Поиск автомобилей по ID владельца.
+	 * @param id - ID владельца в БД.
 	 * @return
 	 */
 	@Query(nativeQuery = true, value = "SELECT * FROM car c WHERE c.owner_id = :ownerId")
 	List<Car> findByOwnerId(@Param("ownerId") long id);
+
+	/**
+	 * Поиск автомобилей не принадлежащих владельцу.
+	 * @param id - ID владельца в БД.
+	 * @return
+	 */
+	@Query(nativeQuery = true, value = "SELECT * FROM car c WHERE c.owner_id != :ownerId")
+	List<Car> findNotOwnerCars(@Param("ownerId") long id);
 }
