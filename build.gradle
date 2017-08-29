@@ -17,6 +17,7 @@ buildscript {
         classpath "org.postgresql:postgresql:$postgresqlVersion"
         classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
         classpath "com.moowork.gradle:gradle-node-plugin:1.1.1"
+        classpath "fi.jasoft.plugin:gradle-vaadin-plugin:1.1.6"
     }
 }
 
