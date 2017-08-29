@@ -12,7 +12,7 @@ import org.springframework.context.annotation.PropertySource;
  * Created by Vladimir on 19.08.2017.
  */
 @SpringBootApplication
-@Import({ ControllerConfig.class, ServiceConfig.class, DataConfig.class, UIConfig.class})
+@Import({ ControllerConfig.class, ServiceConfig.class, DataConfig.class})
 public class TestSpringBootGradleMain extends SpringBootServletInitializer {
 
 	public static void main(final String[] args) {
