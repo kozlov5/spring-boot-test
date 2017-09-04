@@ -19,11 +19,11 @@
         </insert>
 
         <insert tableName="car_details">
-            <column name="car_id" value="4"/>
+            <column name="car_id" value="17"/>
             <column name="details_id" value="1"/>
         </insert>
         <insert tableName="car_details">
-            <column name="car_id" value="4"/>
+            <column name="car_id" value="17"/>
             <column name="details_id" value="2"/>
         </insert>
 

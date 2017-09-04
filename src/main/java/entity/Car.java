@@ -1,13 +1,23 @@
 package entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Сущность автомобиль
  */
+@EqualsAndHashCode(callSuper = true, exclude = {"owner", "details"})
 @Entity
-public class Car extends AbstractBaseEntity {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Car extends AbstractBaseEntity implements Serializable{
 
     /**
      * Название автомобиля
@@ -30,55 +40,4 @@ public class Car extends AbstractBaseEntity {
             inverseJoinColumns = {
                     @JoinColumn(name = "details_id", nullable = false)})
     private List<Details> details;
-
-
-    public Car() {
-
-    }
-
-    public Car(long id, String name, String model) {
-        super.setId(id);
-        this.name = name;
-        this.model = model;
-    }
-
-    public long getId() {
-        return super.getId();
-    }
-
-    public void setId(long id) {
-        super.setId(id);
-    }
-
-    public Owner getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public List<Details> getDetails() {
-        return details;
-    }
-
-    public void setDetails(List<Details> details) {
-        this.details = details;
-    }
 }
