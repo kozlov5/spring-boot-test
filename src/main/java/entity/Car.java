@@ -1,5 +1,6 @@
 package entity;
 
+import enums.CarStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -40,4 +41,7 @@ public class Car extends AbstractBaseEntity implements Serializable{
             inverseJoinColumns = {
                     @JoinColumn(name = "details_id", nullable = false)})
     private List<Details> details;
+
+    @Enumerated(value = EnumType.STRING)
+    private CarStatus status;
 }

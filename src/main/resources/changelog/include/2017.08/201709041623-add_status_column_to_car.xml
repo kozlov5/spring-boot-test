@@ -1,0 +1,19 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="201709041623-add_status_column_to_car" author="Kozlov Vladimir">
+        <comment>
+            Добавить колонку статус, к таблице автомобили
+        </comment>
+
+        <addColumn tableName="car">
+            <column name="status" type="VARCHAR(50)" remarks="статус автомобиля" defaultValue="NO_CRASH">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+
+    </changeSet>
+
+</databaseChangeLog>
