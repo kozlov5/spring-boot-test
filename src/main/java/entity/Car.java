@@ -1,17 +1,13 @@
 package entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Сущность автомобиль
  */
 @Entity
-public class Car {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(insertable = false, updatable = false)
-    private long id;
+public class Car extends AbstractBaseEntity {
 
     /**
      * Название автомобиля
@@ -27,23 +23,31 @@ public class Car {
     @JoinColumn(name = "owner_id")
     private Owner owner;
 
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @JoinTable(name = "car_details",
+            joinColumns = {
+                    @JoinColumn(name = "car_id", nullable = false)},
+            inverseJoinColumns = {
+                    @JoinColumn(name = "details_id", nullable = false)})
+    private List<Details> details;
+
 
     public Car() {
 
     }
 
     public Car(long id, String name, String model) {
-        this.id = id;
+        super.setId(id);
         this.name = name;
         this.model = model;
     }
 
     public long getId() {
-        return id;
+        return super.getId();
     }
 
     public void setId(long id) {
-        this.id = id;
+        super.setId(id);
     }
 
     public Owner getOwner() {
@@ -70,5 +74,11 @@ public class Car {
         this.model = model;
     }
 
+    public List<Details> getDetails() {
+        return details;
+    }
 
+    public void setDetails(List<Details> details) {
+        this.details = details;
+    }
 }
