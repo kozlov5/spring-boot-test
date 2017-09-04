@@ -1,0 +1,32 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="201709041344-add_test_rows_to_details_table" author="Kozlov Vladimir">
+        <comment>
+            Добавим тестовых данных для таблицы details
+        </comment>
+
+        <insert tableName="details">
+            <column name="id" value="1"/>
+            <column name="text" value="test text 1"/>
+        </insert>
+
+        <insert tableName="details">
+            <column name="id" value="2"/>
+            <column name="text" value="test text 2"/>
+        </insert>
+
+        <insert tableName="car_details">
+            <column name="car_id" value="4"/>
+            <column name="details_id" value="1"/>
+        </insert>
+        <insert tableName="car_details">
+            <column name="car_id" value="4"/>
+            <column name="details_id" value="2"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

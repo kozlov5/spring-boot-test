@@ -5,12 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Owner {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(insertable = false, updatable = false)
-    private long id;
+public class Owner extends AbstractBaseEntity {
 
     private String firstName;
 
@@ -28,21 +23,12 @@ public class Owner {
     }
 
     public Owner() {
-
     }
 
     public Owner(long id, String firstName, String lastName) {
-        this.id = id;
+        super.setId(id);
         this.firstName = firstName;
         this.lastName = lastName;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getFirstName() {
