@@ -21,9 +21,9 @@ buildscript {
     }
 }
 
-plugins {
-    id 'fi.jasoft.plugin.vaadin' version '1.0.1'
-}
+//plugins {
+//    id 'fi.jasoft.plugin.vaadin' version '1.0.1'
+//}
 
 group 'testSpringBootGradle'
 version '1.0-SNAPSHOT'
@@ -33,14 +33,14 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 apply plugin: 'liquibase'
 apply plugin: "com.moowork.node"
-apply plugin: 'fi.jasoft.plugin.vaadin'
+//apply plugin: 'fi.jasoft.plugin.vaadin'
 
 sourceCompatibility = 8
 
 repositories {
-    maven {
-        url 'http://maven.vaadin.com/vaadin-addons'
-    }
+//    maven {
+//        url 'http://maven.vaadin.com/vaadin-addons'
+//    }
     mavenCentral()
 }
 
@@ -49,10 +49,11 @@ ext {
     jacksonVersion = '2.8.3'
     liquibaseVersion = '3.4.2'
     postgresqlVersion = '42.1.4'
-    vaadinSpringBootVersion = '1.2.0'
-    vaadinVersion = "7.7.7"
+    lombokVersion = "1.16.10"
+//    vaadinSpringBootVersion = '1.2.0'
+//    vaadinVersion = "7.7.7"
     viritinVersion = '1.61'
-    vaadinContextMenuVersion = '4.5'
+//    vaadinContextMenuVersion = '4.5'
     easyuploadsVersion = '7.4.10'
 }
 
@@ -63,50 +64,52 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
     compile "org.liquibase:liquibase-core:$liquibaseVersion"
 
+    compile "org.projectlombok:lombok:$lombokVersion"
+
     compile "org.springframework.boot:spring-boot-starter-aop:$springBootVersion"
 
     compile "com.fasterxml.jackson.core:jackson-core:$jacksonVersion"
     compile "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
     compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonVersion"
 
-    compile "com.vaadin:vaadin-client-compiled:$vaadinVersion"
-    compile "com.vaadin:vaadin-themes:$vaadinVersion"
-    compile "com.vaadin:vaadin-client:$vaadinVersion"
-    compile "com.vaadin:vaadin-shared:$vaadinVersion"
-    compile "com.vaadin:vaadin-push:$vaadinVersion"
-    compile "com.vaadin:vaadin-spring-boot-starter:$vaadinSpringBootVersion"
-    compile "org.vaadin:viritin:$viritinVersion"
-    compile "org.vaadin.addons:contextmenu:$vaadinContextMenuVersion"
-    compile "org.vaadin.addon:easyuploads:$easyuploadsVersion"
+//    compile "com.vaadin:vaadin-client-compiled:$vaadinVersion"
+//    compile "com.vaadin:vaadin-themes:$vaadinVersion"
+//    compile "com.vaadin:vaadin-client:$vaadinVersion"
+//    compile "com.vaadin:vaadin-shared:$vaadinVersion"
+//    compile "com.vaadin:vaadin-push:$vaadinVersion"
+//    compile "com.vaadin:vaadin-spring-boot-starter:$vaadinSpringBootVersion"
+//    compile "org.vaadin:viritin:$viritinVersion"
+//    compile "org.vaadin.addons:contextmenu:$vaadinContextMenuVersion"
+//    compile "org.vaadin.addon:easyuploads:$easyuploadsVersion"
 
     runtime "org.postgresql:postgresql:$postgresqlVersion"
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
-configurations.each { conf ->
-    conf.resolutionStrategy.eachDependency { DependencyResolveDetails details ->
-        if (details.requested.group == 'javax.validation' && details.requested.name == 'validation-api') {
-            if (conf.name == 'runtime' && project.gradle.startParameter.taskNames[0] != 'vaadinCompile') {
-                details.useVersion '1.1.0.Final'
-            } else {
-                details.useVersion '1.0.0.GA'
-            }
-        }
-    }
-}
+//configurations.each { conf ->
+//    conf.resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+//        if (details.requested.group == 'javax.validation' && details.requested.name == 'validation-api') {
+//            if (conf.name == 'runtime' && project.gradle.startParameter.taskNames[0] != 'vaadinCompile') {
+//                details.useVersion '1.1.0.Final'
+//            } else {
+//                details.useVersion '1.0.0.GA'
+//            }
+//        }
+//    }
+//}
 
 
 task wrapper(type: Wrapper) {
     gradleVersion = '3.1'
 }
 
-vaadin {
-    vaadinCompile.widgetset 'testSpringBootGradle'
-    vaadinCompile.outputDirectory = file('build/resources/main/')
-}
+//vaadin {
+//    vaadinCompile.widgetset 'testSpringBootGradle'
+//    vaadinCompile.outputDirectory = file('build/resources/main/')
+//}
 
 war {
-    archiveName "testSpringBootGradle.war"
+    archiveName "test.war"
 }
 
 jar {
@@ -114,4 +117,4 @@ jar {
     version = '0.0.1'
 }
 
-jar.dependsOn = ["vaadinCompile", "vaadinThemeCompile"]
+//jar.dependsOn = ["vaadinCompile", "vaadinThemeCompile"]

@@ -1,17 +1,24 @@
 package entity;
 
+import enums.CarStatus;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * Сущность автомобиль
  */
+@EqualsAndHashCode(callSuper = true, exclude = {"owner", "details"})
 @Entity
-public class Car {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(insertable = false, updatable = false)
-    private long id;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Car extends AbstractBaseEntity implements Serializable{
 
     /**
      * Название автомобиля
@@ -27,48 +34,14 @@ public class Car {
     @JoinColumn(name = "owner_id")
     private Owner owner;
 
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @JoinTable(name = "car_details",
+            joinColumns = {
+                    @JoinColumn(name = "car_id", nullable = false)},
+            inverseJoinColumns = {
+                    @JoinColumn(name = "details_id", nullable = false)})
+    private List<Details> details;
 
-    public Car() {
-
-    }
-
-    public Car(long id, String name, String model) {
-        this.id = id;
-        this.name = name;
-        this.model = model;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Owner getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-
+    @Enumerated(value = EnumType.STRING)
+    private CarStatus status;
 }

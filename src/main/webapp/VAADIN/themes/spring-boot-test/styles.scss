@@ -1,9 +1,0 @@
-@import "addons.scss";
-@import "spring-boot-test.scss";
-
-/* This file prefixes all rules with the theme name to avoid causing conflicts with other themes. */
-/* The actual styles should be defined in spring-boot-test.scss */
-.spring-boot-test {
-  @include addons;
-  @include spring-boot-test;
-}
