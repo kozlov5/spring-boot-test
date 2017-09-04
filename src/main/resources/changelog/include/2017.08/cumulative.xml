@@ -7,6 +7,7 @@
     <include relativeToChangelogFile="true" file="201708231252-add_test_data_to_car_and_owner_table.xml"/>
     <include relativeToChangelogFile="true" file="201709041344-add_details_table.xml"/>
     <include relativeToChangelogFile="true" file="201709041344-add_test_rows_to_details_table.xml"/>
+    <include relativeToChangelogFile="true" file="201709041623-add_status_column_to_car.xml"/>
 
 </databaseChangeLog>
 
