@@ -1,11 +1,21 @@
 package entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true, exclude = {"cars"})
 @Entity
-public class Owner extends AbstractBaseEntity {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Owner extends AbstractBaseEntity implements Serializable {
 
     private String firstName;
 
@@ -13,38 +23,5 @@ public class Owner extends AbstractBaseEntity {
 
     @OneToMany(fetch = FetchType.EAGER, cascade = { CascadeType.REFRESH}, orphanRemoval = true, mappedBy = "owner")
     private List<Car> cars = new ArrayList<>();
-
-    public List<Car> getCars() {
-        return cars;
-    }
-
-    public void setCars(List<Car> cars) {
-        this.cars = cars;
-    }
-
-    public Owner() {
-    }
-
-    public Owner(long id, String firstName, String lastName) {
-        super.setId(id);
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
 }

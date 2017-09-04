@@ -48,6 +48,7 @@ ext {
     jacksonVersion = '2.8.3'
     liquibaseVersion = '3.4.2'
     postgresqlVersion = '42.1.4'
+    lombokVersion = "1.16.10"
 //    vaadinSpringBootVersion = '1.2.0'
 //    vaadinVersion = "7.7.7"
     viritinVersion = '1.61'
@@ -61,6 +62,8 @@ dependencies {
     runtime "org.springframework.boot:spring-boot-starter-tomcat:$springBootVersion"
     compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
     compile "org.liquibase:liquibase-core:$liquibaseVersion"
+
+    compile "org.projectlombok:lombok:$lombokVersion"
 
     compile "org.springframework.boot:spring-boot-starter-aop:$springBootVersion"
 
