@@ -53,6 +53,7 @@ public class CarView extends MVerticalLayout implements View {
 
 	private final MButton save = new MButton("Сохранить");
 	private final MButton cancel = new MButton("Отмена");
+	private final MButton addDetails = new MButton("Добавить");
 
 	@PostConstruct
 	public void init() {
@@ -61,10 +62,15 @@ public class CarView extends MVerticalLayout implements View {
 		add(new Header("Car page").setHeaderLevel(2));
 		initDetailsGrid();
 
-		carStatus.addItems(CarStatus.values());
+		carStatus.addItems((Object) CarStatus.values());
 		carStatus.setNullSelectionAllowed(false);
 		carStatus.setNewItemsAllowed(false);
 
+		addDetails.addClickListener(event -> {
+            detailWindow.build(new Details(), car);
+            UI.getCurrent().removeWindow(detailWindow);
+            UI.getCurrent().addWindow(detailWindow);
+        });
 		save.addClickListener(event -> {
 			try {
 				fieldGroup.commit();
@@ -79,7 +85,8 @@ public class CarView extends MVerticalLayout implements View {
 			getUI().getNavigator().navigateTo(MainView.VIEW_NAME);
 		});
 
-		final MVerticalLayout fieldLayout = new MVerticalLayout(nameField, modelField, carStatus, detailsGrid).withMargin(true).withFullHeight().withFullWidth();
+
+		final MVerticalLayout fieldLayout = new MVerticalLayout(nameField, modelField, carStatus, addDetails, detailsGrid).withMargin(true).withFullHeight().withFullWidth();
 
 		final MHorizontalLayout buttonLayout = new MHorizontalLayout(save, cancel).withMargin(true).withFullWidth();
 
@@ -91,12 +98,17 @@ public class CarView extends MVerticalLayout implements View {
 	public void initDetailsGrid() {
 	    detailsGrid.setCaption("Детали автомобиля");
 	    detailsGrid.setContainerDataSource(new ListContainer<>(Details.class));
+		detailsGrid.withProperties("text");
 	    detailsGrid.getColumn("text").setHeaderCaption("Текст");
 		detailsGrid.addItemClickListener(event -> {
 			if (event.isDoubleClick()) {
+			    detailWindow.build((Details) event.getItemId(), car);
 				UI.getCurrent().removeWindow(detailWindow);
 				UI.getCurrent().addWindow(detailWindow);
 			}
+		});
+		detailWindow.addCloseListener(event -> {
+			refresh();
 		});
     }
 
