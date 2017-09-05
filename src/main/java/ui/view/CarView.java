@@ -6,10 +6,13 @@ import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.spring.annotation.*;
 import com.vaadin.ui.ComboBox;
 import entity.Car;
+import entity.Details;
 import enums.CarStatus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.vaadin.viritin.ListContainer;
 import org.vaadin.viritin.button.MButton;
 import org.vaadin.viritin.fields.MTextField;
+import org.vaadin.viritin.grid.MGrid;
 import org.vaadin.viritin.label.Header;
 import org.vaadin.viritin.layouts.MHorizontalLayout;
 import org.vaadin.viritin.layouts.MVerticalLayout;
@@ -31,12 +34,16 @@ public class CarView extends MVerticalLayout implements View {
 	@Autowired
 	private CarService carService;
 
+	private Car car = new Car();
+
 	@PropertyId("name")
 	private final MTextField nameField = new MTextField("Название автомобиля").withWidth(200, Unit.PIXELS);
 	@PropertyId("model")
 	private final MTextField modelField = new MTextField("Модель автомобиля").withWidth(200, Unit.PIXELS);
 	@PropertyId("status")
 	private final ComboBox carStatus = new ComboBox("Статус автомобиля");
+
+	private final MGrid<Details> detailsGrid = new MGrid<>(Details.class);
 
 	private final BeanFieldGroup<Car> fieldGroup = new BeanFieldGroup<>(Car.class);
 
@@ -46,8 +53,9 @@ public class CarView extends MVerticalLayout implements View {
 	@PostConstruct
 	public void init() {
 		withFullWidth();
-		withFullHeight();
+//		withFullHeight();
 		add(new Header("Car page").setHeaderLevel(2));
+		initDetailsGrid();
 
 		carStatus.addItems(EnumSet.allOf(CarStatus.class));
 		carStatus.setNullSelectionAllowed(false);
@@ -67,7 +75,8 @@ public class CarView extends MVerticalLayout implements View {
 			getUI().getNavigator().navigateTo(MainView.VIEW_NAME);
 		});
 
-		final MVerticalLayout fieldLayout = new MVerticalLayout(nameField, modelField, carStatus).withMargin(true).withFullHeight().withFullWidth();
+		final MVerticalLayout fieldLayout = new MVerticalLayout(nameField, modelField, carStatus, detailsGrid).withMargin(true).withFullHeight().withFullWidth();
+
 		final MHorizontalLayout buttonLayout = new MHorizontalLayout(save, cancel).withMargin(true).withFullWidth();
 
 		add(fieldLayout, buttonLayout);
@@ -75,13 +84,24 @@ public class CarView extends MVerticalLayout implements View {
 		setExpandRatio(buttonLayout, 0.2f);
 	}
 
+	public void initDetailsGrid() {
+	    detailsGrid.setCaption("Детали автомобиля");
+	    detailsGrid.setContainerDataSource(new ListContainer<>(Details.class));
+	    detailsGrid.getColumn("text").setHeaderCaption("Текст");
+    }
+
+    private void refresh() {
+	    detailsGrid.setRows(car.getDetails());
+    }
+
 	public void build(@NotNull Car car) {
+	    this.car = car;
 		fieldGroup.setItemDataSource(car);
 		fieldGroup.buildAndBindMemberFields(this);
 	}
 
 	@Override
 	public void enter(ViewChangeListener.ViewChangeEvent event) {
-
+        refresh();
 	}
 }
