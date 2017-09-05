@@ -7,7 +7,7 @@ import lombok.Getter;
  */
 public enum CarStatus {
 
-	CRASH("Сломана", () -> {
+	CRASH("Сломан", () -> {
 		System.out.println("Машина поломана");
 	}),
 	NO_CRASH("На ходу", () -> {
