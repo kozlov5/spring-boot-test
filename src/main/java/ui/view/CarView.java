@@ -4,7 +4,9 @@ import com.vaadin.data.fieldgroup.*;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.spring.annotation.*;
+import com.vaadin.ui.ComboBox;
 import entity.Car;
+import enums.CarStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.vaadin.viritin.button.MButton;
 import org.vaadin.viritin.fields.MTextField;
@@ -15,6 +17,7 @@ import service.test.CarService;
 
 import javax.annotation.PostConstruct;
 import javax.validation.constraints.NotNull;
+import java.util.EnumSet;
 
 /**
  * Created by Vladimir on 25.08.2017.
@@ -32,6 +35,8 @@ public class CarView extends MVerticalLayout implements View {
 	private final MTextField nameField = new MTextField("Название автомобиля").withWidth(200, Unit.PIXELS);
 	@PropertyId("model")
 	private final MTextField modelField = new MTextField("Модель автомобиля").withWidth(200, Unit.PIXELS);
+	@PropertyId("status")
+	private final ComboBox carStatus = new ComboBox("Статус автомобиля");
 
 	private final BeanFieldGroup<Car> fieldGroup = new BeanFieldGroup<>(Car.class);
 
@@ -43,6 +48,10 @@ public class CarView extends MVerticalLayout implements View {
 		withFullWidth();
 		withFullHeight();
 		add(new Header("Car page").setHeaderLevel(2));
+
+		carStatus.addItems(EnumSet.allOf(CarStatus.class));
+		carStatus.setNullSelectionAllowed(false);
+		carStatus.setNewItemsAllowed(false);
 
 		save.addClickListener(event -> {
 			try {
@@ -58,7 +67,7 @@ public class CarView extends MVerticalLayout implements View {
 			getUI().getNavigator().navigateTo(MainView.VIEW_NAME);
 		});
 
-		final MVerticalLayout fieldLayout = new MVerticalLayout(nameField, modelField).withMargin(true).withFullHeight().withFullWidth();
+		final MVerticalLayout fieldLayout = new MVerticalLayout(nameField, modelField, carStatus).withMargin(true).withFullHeight().withFullWidth();
 		final MHorizontalLayout buttonLayout = new MHorizontalLayout(save, cancel).withMargin(true).withFullWidth();
 
 		add(fieldLayout, buttonLayout);

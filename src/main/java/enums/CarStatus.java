@@ -7,10 +7,10 @@ import lombok.Getter;
  */
 public enum CarStatus {
 
-	CRASH("Машина поломана", () -> {
+	CRASH("Сломана", () -> {
 		System.out.println("Машина поломана");
 	}),
-	NO_CRASH("Машина в рабочем состоянии", () -> {
+	NO_CRASH("На ходу", () -> {
 		System.out.println("Машина в рабочем состоянии");
 	});
 
@@ -22,5 +22,10 @@ public enum CarStatus {
 	CarStatus(String title, Event event) {
 		this.title = title;
 		this.event = event;
+	}
+
+	@Override
+	public String toString() {
+		return title;
 	}
 }

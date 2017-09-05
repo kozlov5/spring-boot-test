@@ -51,8 +51,6 @@ ext {
     vaadinSpringBootVersion = '1.2.0'
     vaadinVersion = "7.7.7"
     lombokVersion = "1.16.10"
-//    vaadinSpringBootVersion = '1.2.0'
-//    vaadinVersion = "7.7.7"
     viritinVersion = '1.61'
     vaadinContextMenuVersion = '4.5'
     easyuploadsVersion = '7.4.10'
