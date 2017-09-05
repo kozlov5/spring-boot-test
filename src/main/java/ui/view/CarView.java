@@ -5,6 +5,7 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.spring.annotation.*;
 import com.vaadin.ui.ComboBox;
+import com.vaadin.ui.UI;
 import entity.Car;
 import entity.Details;
 import enums.CarStatus;
@@ -17,6 +18,7 @@ import org.vaadin.viritin.label.Header;
 import org.vaadin.viritin.layouts.MHorizontalLayout;
 import org.vaadin.viritin.layouts.MVerticalLayout;
 import service.test.CarService;
+import ui.view.windows.DetailWindow;
 
 import javax.annotation.PostConstruct;
 import javax.validation.constraints.NotNull;
@@ -33,8 +35,10 @@ public class CarView extends MVerticalLayout implements View {
 
 	@Autowired
 	private CarService carService;
+	@Autowired
+	private DetailWindow detailWindow;
 
-	private Car car = new Car();
+	private Car car;
 
 	@PropertyId("name")
 	private final MTextField nameField = new MTextField("Название автомобиля").withWidth(200, Unit.PIXELS);
@@ -57,7 +61,7 @@ public class CarView extends MVerticalLayout implements View {
 		add(new Header("Car page").setHeaderLevel(2));
 		initDetailsGrid();
 
-		carStatus.addItems(EnumSet.allOf(CarStatus.class));
+		carStatus.addItems(CarStatus.values());
 		carStatus.setNullSelectionAllowed(false);
 		carStatus.setNewItemsAllowed(false);
 
@@ -88,6 +92,12 @@ public class CarView extends MVerticalLayout implements View {
 	    detailsGrid.setCaption("Детали автомобиля");
 	    detailsGrid.setContainerDataSource(new ListContainer<>(Details.class));
 	    detailsGrid.getColumn("text").setHeaderCaption("Текст");
+		detailsGrid.addItemClickListener(event -> {
+			if (event.isDoubleClick()) {
+				UI.getCurrent().removeWindow(detailWindow);
+				UI.getCurrent().addWindow(detailWindow);
+			}
+		});
     }
 
     private void refresh() {
