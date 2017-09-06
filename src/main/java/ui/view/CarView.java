@@ -5,6 +5,7 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.spring.annotation.*;
 import com.vaadin.ui.ComboBox;
+import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.UI;
 import entity.Car;
 import entity.Details;
@@ -47,6 +48,8 @@ public class CarView extends MVerticalLayout implements View {
 	@PropertyId("status")
 	private final ComboBox carStatus = new ComboBox("Статус автомобиля");
 
+	private final TabSheet tabSheet = new TabSheet();
+
 	private final MGrid<Details> detailsGrid = new MGrid<>(Details.class);
 
 	private final BeanFieldGroup<Car> fieldGroup = new BeanFieldGroup<>(Car.class);
@@ -60,6 +63,7 @@ public class CarView extends MVerticalLayout implements View {
 		withFullWidth();
 //		withFullHeight();
 		add(new Header("Car page").setHeaderLevel(2));
+		add(tabSheet);
 		initDetailsGrid();
 
 		carStatus.addItems((Object) CarStatus.values());
@@ -85,14 +89,15 @@ public class CarView extends MVerticalLayout implements View {
 			getUI().getNavigator().navigateTo(MainView.VIEW_NAME);
 		});
 
-
-		final MVerticalLayout fieldLayout = new MVerticalLayout(nameField, modelField, carStatus, addDetails, detailsGrid).withMargin(true).withFullHeight().withFullWidth();
-
+		final MVerticalLayout fieldLayout = new MVerticalLayout(nameField, modelField, carStatus).withMargin(true).withFullHeight().withFullWidth();
 		final MHorizontalLayout buttonLayout = new MHorizontalLayout(save, cancel).withMargin(true).withFullWidth();
 
-		add(fieldLayout, buttonLayout);
-		setExpandRatio(fieldLayout, 0.8f);
-		setExpandRatio(buttonLayout, 0.2f);
+		final MVerticalLayout gridLayout = new MVerticalLayout(addDetails, detailsGrid).withMargin(true).withFullHeight().withFullWidth();
+
+		tabSheet.addTab(fieldLayout).setCaption("Главная");
+		tabSheet.addTab(gridLayout).setCaption("Детали");
+
+		add(buttonLayout);
 	}
 
 	public void initDetailsGrid() {

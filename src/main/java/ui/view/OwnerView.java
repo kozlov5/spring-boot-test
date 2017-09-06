@@ -8,6 +8,7 @@ import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.ui.Grid;
+import com.vaadin.ui.TabSheet;
 import entity.Car;
 import entity.Owner;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +54,8 @@ public class OwnerView extends MVerticalLayout implements View {
     private final MButton save = new MButton("Сохранить");
     private final MButton cancel = new MButton("Отмена");
 
+    private final TabSheet tabSheet = new TabSheet();
+
     /**
      * Список автомобилей не принадлежащих текущему владельцу
      */
@@ -66,8 +69,8 @@ public class OwnerView extends MVerticalLayout implements View {
     @PostConstruct
     public void init() {
         withFullWidth();
-//        withFullHeight();
         add(new Header("Owner page").setHeaderLevel(2));
+        add(tabSheet);
         initCarGrid();
         initOwnerCarsGrid();
 
@@ -93,11 +96,10 @@ public class OwnerView extends MVerticalLayout implements View {
 
         final MVerticalLayout fields = new MVerticalLayout(firstName, lastName);
         final MHorizontalLayout buttons = new MHorizontalLayout(save, cancel);
-        final MVerticalLayout owner = new MVerticalLayout(fields, buttons);
-        final MHorizontalLayout top = new MHorizontalLayout(owner, ownerCarsGrid);
-        owner.setExpandRatio(fields, 0.8f);
-        owner.setExpandRatio(buttons, 0.2f);
-        add(top, carGrid);
+        final MHorizontalLayout grids = new MHorizontalLayout(carGrid, ownerCarsGrid);
+        tabSheet.addTab(fields).setCaption("Главная");
+        tabSheet.addTab(grids).setCaption("Автомобили");
+        add(buttons);
     }
 
     private void initCarGrid() {
@@ -121,6 +123,7 @@ public class OwnerView extends MVerticalLayout implements View {
     private void refresh() {
         carGrid.setRows(carService.getNoOwnerCars(owner.getId()));
         ownerCarsGrid.setRows(carService.getByOwnerId(owner.getId()));
+        carGrid.setVisible(carGrid.getRows().size() != 0);
     }
 
     public void build(@NotNull Owner owner) {
