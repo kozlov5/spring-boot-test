@@ -1,14 +1,30 @@
 package data.dto;
 
 import entity.Car;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 /**
  * Created by Alexander on 23.08.2017.
  */
+@ApiModel(value = "Car", description = "Автомобиль")
 public class CarDTO {
     private long id;
+
+    /**
+     * Id владельца
+     */
+    @ApiModelProperty(name = "Идентификатор владельца")
     private long ownerId;
+
+    /**
+     * Название автомобиля
+     */
     private String name;
+
+    /**
+     * Модель автомобиля
+     */
     private String model;
 
     public CarDTO() {

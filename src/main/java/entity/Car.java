@@ -1,6 +1,8 @@
 package entity;
 
 import enums.CarStatus;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -23,11 +25,13 @@ public class Car extends AbstractBaseEntity implements Serializable{
     /**
      * Название автомобиля
      */
+    @ApiModelProperty(value = "Name of car")
     private String name;
 
     /**
      * Модель автомобиля
      */
+    @ApiModelProperty(value = "Model of car")
     private String model;
 
     @ManyToOne(cascade = { CascadeType.REFRESH}, fetch = FetchType.LAZY)

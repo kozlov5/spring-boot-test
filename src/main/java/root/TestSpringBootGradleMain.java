@@ -12,15 +12,21 @@ import org.springframework.context.annotation.PropertySource;
  * Created by Vladimir on 19.08.2017.
  */
 @SpringBootApplication
-@Import({ ControllerConfig.class, ServiceConfig.class, DataConfig.class, UIConfig.class})
+@Import({
+        ControllerConfig.class,
+        ServiceConfig.class,
+        DataConfig.class,
+        UIConfig.class,
+        SwaggerConfig.class
+})
 public class TestSpringBootGradleMain extends SpringBootServletInitializer {
 
-	public static void main(final String[] args) {
-		SpringApplication.run(TestSpringBootGradleMain.class, args);
-	}
+    public static void main(final String[] args) {
+        SpringApplication.run(TestSpringBootGradleMain.class, args);
+    }
 
-	@Override
-	protected SpringApplicationBuilder configure(final SpringApplicationBuilder builder) {
-		return builder.sources(TestSpringBootGradleMain.class);
-	}
+    @Override
+    protected SpringApplicationBuilder configure(final SpringApplicationBuilder builder) {
+        return builder.sources(TestSpringBootGradleMain.class);
+    }
 }
