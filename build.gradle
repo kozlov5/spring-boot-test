@@ -61,6 +61,8 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-web"
     runtime "org.springframework.boot:spring-boot-starter-tomcat:$springBootVersion"
     compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
+    compile('org.springframework.boot:spring-boot-starter-mail')
+
     compile "org.liquibase:liquibase-core:$liquibaseVersion"
 
     compile "org.projectlombok:lombok:$lombokVersion"

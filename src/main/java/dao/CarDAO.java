@@ -13,7 +13,7 @@ public interface CarDAO extends JpaRepository<Car, Long> {
 
 	/**
 	 * Поиск автомобилей по ID владельца.
-	 * @param id - ID владельца в БД.
+	 * @param id ID владельца в БД.
 	 * @return
 	 */
 	@Query(nativeQuery = true, value = "SELECT * FROM car c WHERE c.owner_id = :ownerId")
@@ -21,7 +21,7 @@ public interface CarDAO extends JpaRepository<Car, Long> {
 
 	/**
 	 * Поиск автомобилей не принадлежащих владельцу.
-	 * @param id - ID владельца в БД.
+	 * @param id ID владельца в БД.
 	 * @return
 	 */
 	@Query(nativeQuery = true, value = "SELECT * FROM car c WHERE c.owner_id != :ownerId")
