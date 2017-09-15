@@ -6,9 +6,11 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.mail.internet.MimeMessage;
+import java.util.Objects;
 
 @Controller
 public class EmailController {
@@ -21,16 +23,16 @@ public class EmailController {
 
     @RequestMapping("/simpleemail")
     @ResponseBody
-    String home() {
+    public String home(@RequestParam String name) {
         try {
-            sendEmail();
+            sendEmail(name);
             return "Email Sent!";
         } catch (Exception ex) {
             return "Error in sending email: " + ex;
         }
     }
 
-    private void sendEmail() throws Exception {
+    private void sendEmail(String name) throws Exception {
         MimeMessage message = sender.createMimeMessage();
 
         // Enable the multipart flag!
@@ -49,7 +51,7 @@ public class EmailController {
                     "<body>" +
                 "</html>" +
                 "", true);
-        helper.setSubject("Hi!");
+        helper.setSubject("Hi, " + (Objects.equals(name, "") ? "unnamed" : name) + "!");
         helper.addInline("id101", file);
 
         sender.send(message);

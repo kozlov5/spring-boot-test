@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @Api(value = "cars", description = "Автомобили")
-@RequestMapping(value = "car")
+@RequestMapping(value = "api/car")
 public class CarController {
 
     @Autowired

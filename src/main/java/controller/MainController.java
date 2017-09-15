@@ -12,6 +12,7 @@ import service.test.OwnerService;
 import java.util.List;
 
 @RestController
+@RequestMapping(value = "api/")
 public class MainController {
 
     @Autowired

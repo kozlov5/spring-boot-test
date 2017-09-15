@@ -9,7 +9,7 @@ import service.test.OwnerService;
 import java.util.List;
 
 @RestController
-@RequestMapping("owner")
+@RequestMapping("api/owner")
 public class OwnerController {
 
     @Autowired
